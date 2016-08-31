@@ -1,0 +1,104 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.barra_roja_back {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	background-image: url(../images/barras/roja_middle.jpg);
+	color: #ffffff;
+}
+
+.corto_genero {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	text-transform: lowercase;
+	color: #000000;
+}
+
+.corto_titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+}
+
+.corto_director {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	font-style: italic;
+	color: #000000;
+}
+
+.corto_sinopsis {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #000000;
+}
+
+.corto_fecha {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+}
+
+.corto_destacado_genero {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #878384;
+}
+
+.corto_destacado_titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #878384;
+}
+
+.corto_destacado_director {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	font-style: italic;
+	color: #878384;
+}
+
+.corto_destacado_sinopsis {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #878384;
+}
+
+.corto_destacado_fecha {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #878384;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+
+.titulo_encuesta {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #878384;
+}

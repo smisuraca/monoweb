@@ -1,0 +1,24 @@
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<table width="100%" border="0" height="100%" cellpadding="2" cellspacing="0" class="foros">
+  <tr>
+    <td valign="top"> 
+      <table width="100%" border="0" cellpadding="4" cellspacing="1">
+        <tr align="center" class="foros_light"> 
+          <td width="1%"> <b>C&oacute;digo</b></td>
+          <td> <b>T&iacute;tulo</b></td>
+          <td> <b>Texto</b></td>
+          <td width="1%">&nbsp;</td>
+        </tr>
+        <!-- BEGIN contenidos.Row -->
+        <tr class="tabledata" onmouseover="mOvr(this, 'foros_light')" onmouseout="mOut(this, 'tabledata')" onclick="mClk('index.php?event=buscar&idcontenido={contenidos.idcontenido}')"> 
+          <td width="1%" align="right"><b>{contenidos.idcontenido}</b></td>
+          <td>{contenidos.titulo}</td>
+          <td>{contenidos.texto}</td>
+          <td width="1%" align="center"><a href="index.php?event=buscar&idcontenido={contenidos.idcontenido}"><img  src="../images/editar_mini.gif" alt="Salir" width="16" height="16" name="image" border=0></a></td>
+        </tr>
+        <!-- END contenidos.Row -->
+      </table>
+    </td>
+  </tr>
+</table>

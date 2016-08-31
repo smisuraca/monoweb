@@ -1,0 +1,50 @@
+<!-- BEGIN Nota -->
+<!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+<div style="clear:both">
+<table border="0" cellspacing="10" cellpadding="0" align="left"><tr valign="top"><td>
+		<!-- BEGIN image-gif -->
+		<!-- BEGIN Link -->
+		<img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" alt="{contenidos.titulo}"> 
+		<!-- END Link -->
+		<!-- END image-gif -->
+</td><td align="left">
+		<div>
+			<!-- BEGIN Agenda::Pais --> <!-- BEGIN Link -->
+				{links.titulo}
+			<!-- END Link --> <!-- END Agenda::Pais -->
+		</div>
+		<b>{contenidos.titulo}</b>
+		<span class="fecha_{area}"><b>(desde el {contenidos.fecha} hasta {contenidos.volanta})</b></span>
+		<span class="fin_{area}"><b>(cierre: {contenidos.volanta})</b></span>
+		{contenidos.texto}
+		<br>
+		<!-- BEGIN Agenda::Web --><b>> <a class="link_negro" title="{contenidos.titulo}" href="http://<!-- BEGIN Link -->{links.titulo}<!-- END Link -->">m&aacute;s informaci&oacute;n</a></b><!-- END Agenda::Web -->
+		<br>
+		<!-- BEGIN Agenda::Mail --><b>> <a class="link_negro" title="{contenidos.titulo}" href="mailto:<!-- BEGIN Link -->{links.titulo}<!-- END Link -->">enviar mail al festival</a></b><!-- END Agenda::Mail -->
+</td></tr></table>
+</div>
+<br>
+<!-- END Nota -->
+
+<div class="caja_gris_con_margen">
+
+	<div class="caja_gris_titulo"><b>M&Aacute;S</b></div>
+
+	<!-- BEGIN Agenda -->
+	<!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+
+
+	<div class="caja_gris_separador"></div>
+	
+	<div id="estrenos_datos" class="caja_gris_datos_cortos_estreno">
+		<!-- BEGIN Agenda::Pais --> <!-- BEGIN Link -->{links.titulo}<!-- END Link --> <!-- END Agenda::Pais -->
+
+		<div class="caja_gris_titulo_corto"><a title="{contenidos.titulo}" class="link_negro"  href="?tpl=home_agenda_detalle&area={area}&idcontenido={contenidos.idcontenido}">{contenidos.titulo}</a></div>
+		<span class="caja_gris_datos_varios fecha_{area}">(desde el {contenidos.fecha} hasta {contenidos.volanta})</span>
+		<span class="caja_gris_datos_varios fin_{area}">(cierre: {contenidos.volanta})</span>
+		<div class="caja_gris_sinopsis">{contenidos.bajada}</div>
+	</div>
+
+	<!-- END Agenda -->
+</div>
+

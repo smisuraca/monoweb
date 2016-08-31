@@ -1,0 +1,24 @@
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+ 
+<table width="100%"  height="100%" border="0" cellpadding="2" cellspacing="0" class="tipocontenido">
+  <tr valign="top"> 
+    <td width="0" height="0"> 
+      <table width="100%" border="0" cellpadding="4" cellspacing="1">
+        <tr align="center" class="tipocontenido_light"> 
+          <td width="1%"> <b>C&oacute;digo</b></td>
+          <td> <b>Descripcion</b></td>
+          <td width="1%"><img src="../images/spacer.gif" width="40" height="8"></td>
+        </tr>
+        <!-- BEGIN contenidos_tipos.Row -->
+        <tr class="tabledata" onmouseover="mOvr(this, 'tipocontenido_light')" onmouseout="mOut(this, 'tabledata')" onclick="mClk('index.php?event=form&idcontenido_tipo={contenidos_tipos.idcontenido_tipo}')"> 
+          <td width="1%" align="right"> <b>{contenidos_tipos.idcontenido_tipo}</b></td>
+          <td>{contenidos_tipos.descripcion}</td>
+          <td align="center" width="1%"><a href="index.php?event=form&idcontenido_tipo={contenidos_tipos.idcontenido_tipo}"><img src="../images/editar.gif" width="16" height="16" alt="Editar" border="0"></a><b><a href="index.php?event=borrar&idcontenido_tipo={contenidos_tipos.idcontenido_tipo}"><img src="../images/borrar_mini.gif" width="16" height="16" alt="Borrar" border="0"onClick="if (confirm('Desea borrar el tipo de contenido {contenidos_tipos.idcontenido_tipo}?')) {form.event.value='borrar'; return true} else {return false}"></a></b></td>
+        </tr>
+        <!-- END contenidos_tipos.Row -->
+      </table>
+    </td>
+  <tr>
+  </tr>
+</table>

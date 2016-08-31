@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+  
+<table width="100%" border="0" cellspacing="0" cellpadding="2" height="100%" class="contenido">
+  <tr valign="top"> 
+    <td>
+      <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" class="contenido">
+        <form name='form' method='get' action='index.php'>
+          <input type=HIDDEN name='idcontenido' value="{contenidos.idcontenido}">
+          <input type=HIDDEN name='event' value="">
+          <tr valign="top">
+            <td> 
+              <table width="100%" cellpadding="4" cellspacing="0" border="0">
+                <tr> 
+                  <td colspan="2" align="right"> 
+                    <input type='image' onClick="form.event.value='contenidos_buscar'" src="../images/buscar.gif" title="Buscar" width="22" height="22" name="image">
+                    <input type='image' onClick="form.event.value='form'" src="../images/salir.gif" title="Salir" width="22" height="22" name="image">
+                  </td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Código</b></div>
+                  </td>
+                  <td class="form" width="s"> 
+                    <input type=TEXT name='contenidos_buscar_idcontenido' size=10 value='' class="input_input">
+                  </td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Tipo de Contenido</b></div>
+                  </td>
+                  <td class="form" width="s"> 
+                    <select name="contenidos_buscar_idcontenido_tipo">
+                      <option value="">Todos</option>
+                      <!-- BEGIN contenidos_tipos.Row --> 
+                      <option value="{contenidos_tipos.idcontenido_tipo}" onChange=" if (idcontenido_tipo.value=1) {window.div1.visibility=hidden;}" >{contenidos_tipos.descripcion}</option>
+                      <!-- END contenidos_tipos.Row --> 
+                    </select>
+                  </td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Fecha</b></div>
+                  </td>
+                  <td class="form" width="s" > 
+                    <input type=TEXT name='contenidos_buscar_fecha' size=8 maxlength=8 class="input_input">
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="javascript:;" onClick="setHoy(document.form.fecha)"><img width="16" height="16" src="../images/fecha.gif" title="Hoy" border="0"></a></font> 
+                    <input type="text" name="hora" size=6 maxlength=6 class="input_input">
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="javascript:;" onClick="setHora(document.form.hora)"><img width="16" height="16" title="Ahora" src="../images/hora.gif" border="0"></a></font></td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Título</b></div>
+                  </td>
+                  <td class="form" width="s"> 
+                    <input type=TEXT name='contenidos_buscar_titulo' size=40 value='' class="ta">
+                  </td>
+                </tr>
+                <tr> 
+                  <td valign="top" class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Texto</b></div>
+                  </td>
+                  <td class="form" width="s"> 
+                    <input type=TEXT name='contenidos_buscar_texto' size=40 value='' class="ta">
+                  </td>
+                </tr>
+              </table>
+        </form>
+      </table>
+
+</td>
+  </tr>
+</table>

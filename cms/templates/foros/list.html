@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<table width="100%" border="0" height="100%" cellpadding="2" cellspacing="0" class="foros">
+  <tr>
+    <td valign="top">
+      <table width="100%" border="0" cellpadding="4" cellspacing="1">
+        <form name="form1" method="post" action="index.php?event=borrar">
+          <tr align="center" class="foros_light"> 
+            <td width="1%"> <b>C&oacute;digo</b></td>
+          <td> <b>Asunto</b></td>
+          <td> <b>Mensaje</b></td>
+            <td width="1%" nowrap> 
+              <table width="75%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <input type=image src="../images/borrar_mini.gif" alt="Borrar" width="16" height="16" name="image" border=0 onClick="document.form1.submit">
+                  </td>
+                  <td><a href="index.php?event=list_foros"><img  src="../images/salir_mini.gif" alt="Salir" width="16" height="16" name="image" border=0></a></td>
+                </tr>
+              </table>
+              
+            </td>
+        </tr>
+        <!-- BEGIN foros.Row -->
+        <tr class="tabledata" onmouseover="mOvr(this, 'foros_light')" onmouseout="mOut(this, 'tabledata')"> 
+          <td width="1%" align="right"><b>{foros.idforo}</b></td>
+          <td>{foros.asunto}</td>
+          <td>{foros.mensaje}</td>
+            <td width="1%" align="center" valign="middle" nowrap> 
+              <input type="checkbox" name="idforos[]" value="{foros.idforo}"><a href="index.php?event=form&idforo={foros.idforo}&idcontenido={foros.idcontenido}"><img src="../images/editar.gif" width="16" height="16" alt="Editar" border="0"></a><b></b></td>
+        </tr>
+        <!-- END foros.Row -->
+       </form>
+      </table>
+    </td>
+  </tr>
+</table>

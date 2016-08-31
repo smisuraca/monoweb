@@ -1,0 +1,551 @@
+<script type="text/javascript" language="JavaScript">
+function publicacion_edit(id, idarea, fecha, destacada, orden)
+{
+	var area = document.getElementById('publicacion-edit-area');
+	area.style.display = "block";
+
+	var area = document.getElementById('publicacion-list-area');
+	area.style.display = "none";
+
+	document.form.publicacion_idpublicacion.value = id;
+	setvalue(document.form.publicacion_idarea, idarea);
+	document.form.publicacion_fecha.value = fecha;
+	setvalue(document.form.publicacion_destacada, destacada);
+	document.form.publicacion_orden.value = orden;
+	return false;
+}
+
+function publicacion_exit()
+{
+	var area = document.getElementById('publicacion-edit-area');
+	area.style.display = "none";
+
+	var area = document.getElementById('publicacion-list-area');
+	area.style.display = "block";
+
+	return false;
+}
+
+
+function mmedia_edit(id, idlink, idtipo, titulo, url, orden, type)
+{
+	document.form.mmedia_id.value = id;
+	document.form.mmedia_idlink.value = idlink;
+	setvalue(document.form.mmedia_idtipo, idtipo);
+	document.form.mmedia_titulo.value = titulo;
+	document.form.mmedia_url.value = url;
+	document.form.mmedia_orden.value = orden;
+	document.form.mmedia_type.value = type;
+
+	var area = document.getElementById('mmedia-edit-area');
+	area.style.display = "block";
+
+	var area = document.getElementById('mmedia-list-area');
+	area.style.display = "none";
+
+	return false;
+}
+
+function mmedia_exit()
+{
+	var area = document.getElementById('mmedia-edit-area');
+	area.style.display = "none";
+
+	var area = document.getElementById('mmedia-list-area');
+	area.style.display = "block";
+
+	return false;
+}
+
+function encuesta_edit(id, descripcion, correcta)
+{
+	document.form.opcion_idopcion.value = id;
+	document.form.opcion_descripcion.value = descripcion;
+	setvalue(document.form.opcion_correcta, correcta);
+
+	var area = document.getElementById('encuesta-edit-area');
+	area.style.display = "block";
+
+	var area = document.getElementById('encuesta-list-area');
+	area.style.display = "none";
+
+	return false;
+}
+
+function encuesta_exit()
+{
+	var area = document.getElementById('encuesta-edit-area');
+	area.style.display = "none";
+
+	var area = document.getElementById('encuesta-list-area');
+	area.style.display = "block";
+
+	return false;
+}
+
+
+function edittext(form, input)
+{
+	win = window.open("../htmlarea/fullscreen.html?form="+form+"&input="+input, "edittext", 'menu = no, toolbar = no, status = no, width=600, height=400');
+	return false;
+}
+</script>
+
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<!-- calendar stylesheet -->
+<link rel="stylesheet" type="text/css" media="all" href="../css/calendar-win2k-1.css" title="win2k-cold-1" />
+<!-- main calendar program -->
+<script type="text/javascript" src="../js/calendar.js"></script>
+<!-- language for the calendar -->
+<script type="text/javascript" src="../js/lang/calendar-es.js"></script>
+<!-- the following script defines the Calendar.setup helper function, which makes
+	adding a calendar a matter of 1 or 2 lines of code. -->
+<script type="text/javascript" src="../js/calendar-setup.js"></script>
+
+<form name="form" method="post" action="?" enctype="multipart/form-data">
+<input type="hidden" name="idcontenido" value="{contenidos.idcontenido}">
+<input type="hidden" name="extra1" value="{contenidos.extra1}">
+<input type="hidden" name="extra2" value="{contenidos.extra2}">
+<input type="hidden" name="extra3" value="{contenidos.extra3}">
+<input type="hidden" name="extra4" value="{contenidos.extra4}">
+<input type="hidden" name="event" value="">
+
+<table width="100%" border="0" cellpadding="3" cellspacing="0" height="100%" class="contenidos">
+<tr height="1%"><td>
+<strong>Editando Contenido: {contenidos.idcontenido} - {contenidos.titulo}</strong>
+</td></tr>
+<tr><td valign="top">
+	<table width="100%" border="0" cellspacing="0" cellpadding="2">
+		<tr align="center">
+		<td align="center" id="contenido-tab" class="contenidos_tab" width="1%" onClick="TabSelect('contenido', 'contenidos_tab', 'contenidos_tab_select')" nowrap>
+		<img src="../images/contenido_mini.gif" title="" border="0" align="absmiddle">
+		<b>&nbsp;Contenido&nbsp;</b></a>
+		</td>
+		<td align="center" id="publicacion-tab" class="contenidos_tab" width="1%" onClick="TabSelect('publicacion', 'contenidos_tab', 'contenidos_tab_select')" nowrap>
+		<img src="../images/publicar_mini.gif" title="" border="0" align="absmiddle">
+		<b>&nbsp;Publicaci&oacute;n&nbsp;</b></a>
+		</td>
+		<td align="center" id="multimedias-tab" class="contenidos_tab" width="1%" onClick="TabSelect('multimedias', 'contenidos_tab', 'contenidos_tab_select')" nowrap>
+		<img src="../images/mmedia.gif" title="" border="0" width="16" height="16" align="absmiddle">
+		<b>&nbsp;Multimedias&nbsp;</b>
+		</td>
+		<td align="center" id="encuesta-tab" class="contenidos_tab" width="1%" onClick="TabSelect('encuesta', 'contenidos_tab', 'contenidos_tab_select')" nowrap>
+		<img src="../images/encuesta_mini.gif" title="" border="0" align="absmiddle">
+		<b>&nbsp;Encuesta&nbsp;</b>
+		</td>
+	<!-- BEGIN contenidos_links.Row -->
+		<td align="center" id="player-tab" class="contenidos_tab" width="1%" onClick="TabSelect('player', 'contenidos_tab', 'contenidos_tab_select')" nowrap>
+		<img src="../images/videos.gif" title="" border="0" align="absmiddle" width="16">
+		<b>&nbsp;Player&nbsp;</b>
+		</td>
+	<!-- END contenidos_links.Row -->
+		<td align="center" id="encuesta-tab" class="contenidos_tab" width="1%" onClick="mClk('?event=exit')" nowrap>
+		<img src="../images/salir_mini.gif" title="" border="0" align="absmiddle">
+		<b>&nbsp;Salir&nbsp;</b>
+		</td>
+		<td align="center" class="contenidos_tab_null" width="100%" nowrap>&nbsp;</td>
+		</tr>
+	</table>
+
+	<div id="contenido-tab-area" style="display: none; border: solid 1px; border-top: none;">
+	<table cellpadding="4" cellspacing="0" border="0" width="100%" class="contenidos_light">
+		<tr valign="middle" align="right">
+		<td colspan="3">
+			<input type="image" onclick="form.event.value='store,list'" src="../images/save_mini.gif" title="Grabar">
+			<input type="image" onclick="if (confirm('Desea borrar este contenido?')) {
+												form.event.value='delete,list'; return true;} else {return false;}"
+			src="../images/borrar_mini.gif" title="Borrar">
+		</td>
+		</tr>
+		<tr valign="middle">
+			<td align="right" class="contenidos_light" width="1%" nowrap="true">
+				<b>Tipo de Contenido</b>
+			</td>
+			<td class="form">
+				<select name="idcontenido_tipo">
+				<!-- BEGIN contenidos_tipos.Row -->
+				<option value="{contenidos_tipos.idcontenido_tipo}">{contenidos_tipos.descripcion}</option>
+				<!-- END contenidos_tipos.Row -->
+				</select>
+				<script>setvalue(document.form.idcontenido_tipo, "{contenidos.idcontenido_tipo}")</script>
+			</td>
+		</tr>
+		<tr valign="middle">
+		<td align="right" class="contenidos_light" width="1%" nowrap="nowrap">
+			<b>Fecha</b>
+		</td>
+		<td class="form" width="100%">
+			<input type="text" name="fecha" id="fecha" size="19" maxlength="19" value="{contenidos.fecha.nice}" class="input_input">
+			<a href="javascript:;"><img id="bt_fecha" src="../images/bt_fecha.gif" title="Fecha/Hora" border="0" align="absmiddle"> </a>
+			<script type="text/javascript">
+				Calendar.setup({
+					inputField     :    "fecha",      // id of the input field
+					ifFormat       :    "%Y-%m-%d %H:%M:00",       // format of the input field
+					showsTime      :    true,            // will display a time selector
+					button         :    "bt_fecha",   // trigger for the calendar (button ID)
+					singleClick    :    false,           // double-click mode
+					step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+				});
+			</script>
+			</font>
+		</td>
+		</tr>
+		<tr valign="middle">
+		<td align="right" class="contenidos_light" width="1%" nowrap="nowrap">
+			<b>T&iacute;tulo</b>
+			<a href="javascript:;" onclick="edittext('form', 'titulo')">
+			<img src="../images/editar.gif" title="Editar" border="0" align="absmiddle">
+			</a>
+		</td>
+		<td class="form" width="100%">
+			<textarea cols="50" name="titulo" rows="1" class="ta">{contenidos.titulo}</textarea>
+		</td>
+		</tr>
+
+		<TR valign="middle">
+			<TD align="right" class="contenidos_light" width="1%" nowrap="nowrap">
+				<b>Titulo Corto</b>
+				<a href="javascript:;" onclick="edittext('form', 'titulo_corto')">
+				<img src="../images/editar.gif" title="Editar" border="0" align="absmiddle">
+				</a>
+			</TD>
+			<TD class="form">
+				<textarea cols="50" name="titulo_corto" rows="1" class="ta">{contenidos.titulo_corto}</textarea>
+			</TD>
+		</TR>
+
+		<TR valign="middle">
+			<TD align="right" class="contenidos_light">
+				<b>Volanta</b>
+				<a href="javascript:;" onClick="edittext('form', 'volanta')">
+				<img src="../images/editar.gif" title="Editar" border="0" align="absmiddle">
+				</a>
+			</TD>
+			<TD class="form" width="1%">
+				<textarea cols="50" name="volanta" rows="1" class="ta">{contenidos.volanta}</textarea>
+			</TD>
+		</TR>
+
+		<TR valign="middle">
+			<TD align="right" class="contenidos_light" width="1%" nowrap>
+				<b>Bajada</b>
+				<a href="javascript:;" onClick="edittext('form', 'bajada')">
+				<img src="../images/editar.gif" title="Editar" border="0" align="absmiddle">
+				</a>
+			</TD>
+			<TD class="form" width="100%">
+				<textarea name="bajada" class="ta" rows="2">{contenidos.bajada}</textarea>
+			</TD>
+		</TR>
+
+		<tr valign="middle">
+			<td align="right" class="contenidos_light" width="1%" nowrap="nowrap">
+				<b>Texto</b>
+				<a href="javascript:;" onClick="edittext('form', 'texto')">
+				<img src="../images/editar.gif" title="Editar" border="0" align="absmiddle">
+				</a>
+			</td>
+			<td class="form" width="100%">
+				<textarea name="texto" class="ta" rows="6">{contenidos.texto}</textarea>
+			</td>
+		</tr>
+		<TR valign="middle">
+			<TD align="right" class="contenidos_light" width="1%" nowrap><b>Es Foro?</b></TD>
+			<TD class="form" width="100%">
+				<select name="comentarios">
+				<option value="">----</option>
+				<option value="NO">NO</option>
+				<option value="SI">SI Abierto</option>
+				<option value="MODERADO">SI Moderado</option>
+				</select>
+				<script>setvalue(document.form.comentarios, "{contenidos.comentarios}")</script>
+			</TD>
+		</TR>
+	</table>
+	</div>
+
+
+	<div id="encuesta-tab-area" style="display: none; border: solid 1px; border-top: none;">
+	<div id="encuesta-edit-area" style="display: none;">
+		<input type="hidden" name="opcion_idopcion" value="">
+		<table width="100%" cellpadding="4" cellspacing="0" border="0">
+		<tr class="contenidos_light">
+		<td colspan="2" align="right" nowrap>
+			<input type="image" onclick="form.event.value='opcion_store,edit'" src="../images/save_mini.gif" title="Grabar">
+			<a href="javascript:;" onClick="encuesta_exit();"><img src="../images/salir_mini.gif" border="0"></a>
+		</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Opci&oacute;n</b></td>
+			<td class="form">
+			<input class="ta" type="text" name="opcion_descripcion" size="40" maxlength="50" value="">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Correcta?</b></td>
+			<td class="form">
+				<select name="opcion_correcta">
+					<option value="">---</option>
+					<option value="S">SI</option>
+					<option value="N">NO</option>
+				</select>
+			</td>
+		</tr>
+		</table>
+	</div>
+
+	<div id="encuesta-list-area" style="display: block;">
+		<table width="100%" border="0" cellpadding="3" cellspacing="0">
+		<tr align="center" class="contenidos_light">
+			<td width="100%"><b>Descripci&oacute;n</b></td>
+			<td width="1%" align="center" nowrap><b>Correcta</b></td>
+			<td width="1%" align="center" nowrap>
+				<a href="javascript:;" onClick="encuesta_edit('0', '', 'S');">
+				<img src="../images/nuevo_mini.gif" border="0" title="Nueva Opci&oacute;n" vspace="0" hspace="0">
+			</a>
+			</td>
+		</tr>
+		<!-- BEGIN contenidos.opciones.Row -->
+		<tr class="tabledata" onMouseOver="mOvr(this, 'contenidos_light')" onMouseOut="mOut(this, 'tabledata')">
+			<td width="100%">
+			<b>{contenidos.opciones.descripcion}</b> &nbsp;
+			{contenidos.opciones.votos}/{contenidos.opciones.votos_total} ({contenidos.opciones.votos_porcentaje}%)
+			</td>
+			<td width="1%" align="center" nowrap>{contenidos.opciones.opcion_correcta}</td>
+			<td width="1%" align="left" nowrap>
+				<a href="javascript:;" onClick="encuesta_edit('{contenidos.opciones.idopcion}', '{contenidos.opciones.descripcion}', '{contenidos.opciones.opcion_correcta}');">
+				<img src="../images/editar_mini.gif" border="0" title="Editar" vspace="0" hspace="0">
+				</a>
+				<a href="?event=opcion_delete,edit&opcion_idopcion={contenidos.opciones.idopcion}&idcontenido={contenidos.idcontenido}" onClick="if (confirm('Desea borrar la opci� {contenidos.opciones.descripcion}')) {return true} else {return false}">
+				<img src="../images/borrar_mini.gif" border="0" title="Borrar" vspace="0" hspace="0">
+				</a>
+			</td>
+		</tr>
+		<!-- END contenidos.opciones.Row -->
+		</table>
+	</div>
+	</div>
+
+	<div id="multimedias-tab-area" style="display: none; border: solid 1px; border-top: none;">
+	<div id="mmedia-edit-area" style="display: none;">
+		<input type="hidden" name="mmedia_id" value="">
+		<input type="hidden" name="mmedia_idlink" value="">
+		<input type="hidden" name="mmedia_type" value="">
+		<table width="100%" cellpadding="4" cellspacing="0" border="0">
+		<tr class="contenidos_light">
+		<td colspan="2" align="right" nowrap>
+			<input type="image" onclick="form.event.value='mmedia_store,edit'" src="../images/save_mini.gif" title="Grabar">
+			<a href="javascript:;" onClick="mmedia_exit();"><img src="../images/salir_mini.gif" border="0"></a>
+		</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Tipo de MMedia</b></td>
+			<td class="form">
+			<select name="mmedia_idtipo">
+				<option value="">--- Seleccione una opci� ---</option>
+				<!-- BEGIN links_tipos.Row -->
+				<option value="{links_tipos.idlink_tipo}">{links_tipos.descripcion}</option>
+				<!-- END links_tipos.Row -->
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>T&iacute;tulo</b></td>
+			<td class="form">
+			<input type="text" name="mmedia_titulo" size="40" maxlength="255" value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>URL</b></td>
+			<td class="form">
+			<input type="text" name="mmedia_url" size="40" maxlength="255" value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Orden</b></td>
+			<td class="form">
+			<input type="text" name="mmedia_orden" size="10" maxlength="5" value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Adjuntar</b></td>
+			<td class="form">
+			<input type="file" name="mmedia_file" class="ta">
+			</td>
+		</tr>
+		</table>
+
+	</div>
+
+	<div id="mmedia-list-area" style="display: block;">
+		<table width="100%" border="0" cellpadding="4" cellspacing="0">
+		<tr align="center" class="contenidos_light">
+			<td align="left" valign="middle" nowrap="nowrap"><b>Tipo MMedia</b></td>
+			<td valign="middle"> <b>T&iacute;tulo</b> </td>
+			<td width="1%" valign="middle"> <b>Url</b> </td>
+			<td align="center" width="1%" valign="middle"> <b>Orden</b> </td>
+			<td width="1%" valign="middle" align="center" nowrap>
+				<a href="javascript:;" onClick="mmedia_edit('0', '0', '', '', '', '0', '');" title="Nueva Multimedia">
+				<img src="../images/nuevo_mini.gif" border="0">
+				</a>
+			</td>
+		</tr>
+		<!-- BEGIN contenidos.mmedias.Row -->
+		<tr class="tabledata" onmouseover="mOvr(this, 'contenidos_light')" onmouseout="mOut(this, 'tabledata')">
+			<td width="1%" nowrap="nowrap">{contenidos.mmedias.mmedia.tipo.descripcion}</td>
+			<td>{contenidos.mmedias.mmedia.titulo}</td>
+			<td width="1%">{contenidos.mmedias.mmedia.url}</td>
+			<td align="center" width="1%">{contenidos.mmedias.mmedia.orden}</td>
+			<td width="1%" align="center" nowrap>
+				<a href="javascript:;" onClick="mmedia_edit(
+							'{contenidos.mmedias.id}',
+							'{contenidos.mmedias.idlink}',
+							'{contenidos.mmedias.mmedia.idlink_tipo}',
+							'{contenidos.mmedias.mmedia.titulo}',
+							'{contenidos.mmedias.mmedia.url}',
+							'{contenidos.mmedias.mmedia.orden}',
+							'{contenidos.mmedias.mmedia.type}'
+				);" title="Editar">
+				<img src="../images/editar_mini.gif" border="0">
+				</a>
+				<a href="?event=mmedia_delete,edit&idcontenido={contenidos.idcontenido}&mmedia_idlink={contenidos.mmedias.idlink}" title="Borrar">
+				<img src="../images/borrar_mini.gif" border="0" onclick="if (confirm('Desea borrar la multimedia {contenidos.mmedias.mmedia.titulo}?')) {return true} else {return false}">
+				</a>
+			</td>
+		</tr>
+		<!-- END contenidos.mmedias.Row -->
+		</table>
+	</div>
+	</div>
+
+	<div id="publicacion-tab-area" style="display: none; border: solid 1px; border-top: none;">
+	<div id="publicacion-edit-area" style="display: none;">
+	<input type="hidden" name="publicacion_idpublicacion" value="">
+	<table width="100%" cellpadding="4" cellspacing="0" border="0">
+	<tr class="contenidos_light">
+	<td colspan="2" align="right" nowrap>
+		<input type="image" onclick="form.event.value='publicacion_store,edit'" src="../images/save_mini.gif" title="Grabar">
+		<a href="javascript:;" onClick="publicacion_exit();"><img src="../images/salir_mini.gif" border="0"></a>
+	</td>
+	</tr>
+	<tr>
+		<td align="right" class="contenidos_light" width="1%" nowrap><b>Area</b></td>
+		<td class="form">
+			<select name="publicacion_idarea">
+			<option value="">--- Seleccione una Area ---</option>
+			<!-- BEGIN areas.Row -->
+			<option value="{areas.idarea}">{areas.descripcion}</option>
+			<!-- END areas.Row -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td align="right" class="contenidos_light" width="1%" nowrap><b>Fecha</b></td>
+		<td class="form">
+			<input type="text" id="publicacion_fecha" name="publicacion_fecha" size="19" maxlength="19" value="" class="input_input" readonly>
+			<a href="javascript:;"><img src="../images/bt_fecha.gif" title="Fecha publicaci&oacute;n" border="0"id="bt_publicacion_fecha" align="absmiddle"></a>
+			<script type="text/javascript">
+				Calendar.setup({
+					inputField     :    "publicacion_fecha",      // id of the input field
+					ifFormat       :    "%Y-%m-%d %H:%M:00",       // format of the input field
+					showsTime      :    true,            // will display a time selector
+					button         :    "bt_publicacion_fecha",   // trigger for the calendar (button ID)
+					singleClick    :    false,           // double-click mode
+					step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+				});
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td align="right" class="contenidos_light" width="1%" nowrap><b>Destacada?</b></td>
+		<td class="form">
+			<select name="publicacion_destacada">
+			<option value="">----</option>
+			<option value="SI">SI</option>
+			<option value="NO">NO</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td align="right" class="contenidos_light" width="1%" nowrap><b>Orden</b></td>
+		<td class="form">
+		<input type="text" name="publicacion_orden" size="6" maxlength="5" value="" class="ta">
+		</td>
+	</tr>
+	</table>
+	</div>
+
+	<div id="publicacion-list-area" style="display: block;">
+	<table width="100%" border="0" cellpadding="4" cellspacing="0">
+	<tr align="center" class="contenidos_light">
+		<td align="left" valign="middle"><b>Areas</b></td>
+		<td width="1%"><b>Fecha</b></td>
+		<td width="1%"><b>Destacada</b></td>
+		<td width="1%" nowrap>
+			<a href="javascript:;" onClick="publicacion_edit('0', '', '0000-00-00 00:00:00', 'NO', '0');">
+			<img src="../images/nuevo_mini.gif" border="0" title="Nueva Publicaci&oacute;n">
+			</a>
+		</td>
+	</tr>
+
+	<!-- BEGIN contenidos.publicacion.Row -->
+	<tr class="tabledata" onmouseover="mOvr(this, 'contenidos_light')" onmouseout="mOut(this, 'tabledata')">
+		<td>{contenidos.publicacion.area.descripcion}</td>
+		<td width="1%" nowrap>{contenidos.publicacion.fecha_publicacion.nice}</td>
+		<td align="center" width="1%">{contenidos.publicacion.destacada}</td>
+		<td width="1%" align="center" nowrap>
+		<table width="75%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td>
+			<a href="javascript:;" onClick="publicacion_edit('{contenidos.publicacion.idpublicacion}', '{contenidos.publicacion.idarea}', '{contenidos.publicacion.fecha_publicacion.nice}', '{contenidos.publicacion.destacada}', '{contenidos.publicacion.orden}');">
+			<img src="../images/editar.gif" width="16" height="16" border="0" title="Editar">
+			</a>
+		</td>
+		<td>
+			<a href="?event=publicacion_delete,edit&publicacion_idpublicacion={contenidos.publicacion.idpublicacion}&idcontenido={contenidos.idcontenido}"
+				onclick="if (confirm('Desea despublicar el contenido del �ea {contenidos.publicacion.area.descripcion}?')) {return true} else {return false}">
+			<img src="../images/borrar_mini.gif" border="0" title="Despublicar">
+			</a>
+		</td>
+		</tr>
+		</table>
+		</td>
+	</tr>
+	<!-- END contenidos.publicacion.Row -->
+	</table>
+	</div>
+	</div>
+
+	<!-- BEGIN contenidos_links.Row -->
+	<div id="player-tab-area" style="display: none; border: solid 1px; border-top: none;">
+		<div  class="contenidos_light">
+		<br>
+		<center>
+		<script type="text/javascript" src="../js/swfobject.js"></script>
+		<div class="div_player" id="player">	
+		<object type="application/x-shockwave-flash" data="../swf/player.swf" width="512" height="308">
+			<param name="movie" value="../swf/player.swf" />
+			<param name="allowfullscreen" value="true" />
+			<param name="allowscriptaccess" value="always" />
+			<param name="flashvars" value="file=../../flvs/{contenidos_links.mmedia.titulo}.flv"/>
+			<p><a href="http://get.adobe.com/flashplayer">Get Flash</a> to see this player.</p>
+		</object>
+		</div>
+		<br>
+		</center>
+		</div>
+	</div>
+	<!-- END contenidos_links.Row -->
+
+
+
+
+</td></tr>
+</table>
+</form>
+<script>
+	CURRENT_TAB = getCookie("CURRENT_TAB");
+	if (!document.getElementById(CURRENT_TAB+'-tab'))
+		CURRENT_TAB = 'contenido';
+	TabSelect(CURRENT_TAB, 'contenidos_tab', 'contenidos_tab_select')
+</script>

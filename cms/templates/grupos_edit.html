@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action=''>
+<INPUT TYPE=HIDDEN NAME='idgrupo' VALUE="{grupos.idgrupo}">
+<input type=HIDDEN name='event' value="">
+<table width="100%" border="0" cellpadding="2" cellspacing="0" class="grupos">
+<tr><td valign="top">
+	<table width="100%" cellpadding="4" cellspacing="1" border="0">
+		<tr align="center">
+			<td colspan="2"><b>Grupos</b></td>
+		</tr>
+		<tr align="right" class="grupos_light">
+			<td colspan="2">
+			<input type='image' onClick="form.event.value='store,edit'" src="../images/save.gif" title="Grabar" width="22" height="22" name="image">
+			<input type='image' onClick="if (confirm('Desea borrar este grupo?')) {form.event.value='delete,list'; return true} else {return false}" src="../images/borrar.gif" title="Borrar" width="22" height="22" name="image">
+			<input type='image' onClick="form.event.value='exit'" src="../images/salir.gif" title="Salir" width="22" height="22" name="image">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="grupos_light" width="1%" nowrap><b>Nombre</b></td>
+			<td class="form"><input type=TEXT name='nombre' size=40 maxlength=50 value="{grupos.nombre}" class="ta">
+		</td>
+		</tr>
+	</table>
+	<br>
+	<table width="100%" border="0" cellspacing="0" cellpadding="2">
+		<tr align="center">
+		<td align="center" id="usuarios-tab" class="grupos_tab" width="1%" onClick="TabSelect('usuarios', 'grupos_tab', 'grupos_tab_select')" nowrap>
+		<b>&nbsp;Usuarios&nbsp;</b></a>
+		</td>
+		<td align="center" id="permisos-tab" class="grupos_tab" width="1%" onClick="TabSelect('permisos', 'grupos_tab', 'grupos_tab_select')" nowrap>
+		<b>&nbsp;Permisos&nbsp;</b></a>
+		</td>
+		<td align="center" class="grupos_tab_null" width="100%" nowrap>&nbsp;</td>
+		</tr>
+	</table>
+	<div id="permisos-tab-area" style="display: none; border: solid 1px; border-top: none;">
+		<table width="100%" border="0" cellspacing="0" cellpadding="4">
+			<tr class="grupos_light">
+			<td>
+				<select name="idpermiso" style="width='100%'">
+				<option value="">--- Seleccione un Permiso ---</option>
+				<!-- BEGIN permisos.Row -->
+				<option value="{permisos.idpermiso}">{permisos.descripcion}</option>
+				<!-- END permisos.Row -->
+				</select>
+			</td>
+			<td width="1%" align="center">
+				<input type='image' onClick="form.event.value='permiso_store,edit'" src="../images/edit_add.gif" title="Agregar Permiso" name="image2">
+			</td>
+			</tr>
+			<!-- BEGIN grupos.permisos.Row -->
+			<tr class="tabledata" onmouseover="mOvr(this, 'grupos_light')" onmouseout="mOut(this, 'tabledata')">
+			<td>{grupos.permisos.permiso.descripcion}</td>
+			<td width="1%" align="center">
+			<a href="?event=permiso_delete,edit&idgrupo={grupos.permisos.idgrupo}&idgrupo_permiso={grupos.permisos.id}" onClick="if (confirm('Desea quitar el permiso \'{grupos.permisos.permiso.descripcion}\' de este grupo?')) {return true} else {return false}"><img src="../images/edit_remove.gif" border="0" title="Quitar Permiso" vspace="0" hspace="0"></a></td>
+			</tr>
+			<!-- END grupos.permisos.Row -->
+		</table>
+	</div>
+
+	<div id="usuarios-tab-area" style="display: none; border: solid 1px; border-top: none;">
+		<table width="100%" border="0" cellspacing="0" cellpadding="4">
+			<tr  class="grupos_light">
+			<td>
+				<select name="idusuario" style="width='100%'">
+				<option value="">--- Seleccione un Usuario ---</option>
+				<!-- BEGIN usuarios.Row -->
+				<option value="{usuarios.idusuario}">{usuarios.username}
+				({usuarios.apellido}, {usuarios.nombre})</option>
+				<!-- END usuarios.Row -->
+				</select>
+			</td>
+			<td width="1%" align="center">
+				<input type='image' onClick="form.event.value='usuario_store,edit'" src="../images/edit_add.gif" title="Agregar Usuario" name="image3">
+			</td>
+			</tr>
+			<!-- BEGIN grupos.usuarios.Row -->
+			<tr class="tabledata" onmouseover="mOvr(this, 'grupos_light')" onmouseout="mOut(this, 'tabledata')">
+			<td>
+			{grupos.usuarios.usuario.username} ({grupos.usuarios.usuario.apellido},
+			{grupos.usuarios.usuario.nombre})
+			</td>
+			<td width="1%" align="center">
+			<a href="?event=usuario_delete,edit&idgrupo={grupos.idgrupo}&idusuario_grupo={grupos.usuarios.id}" onClick="if (confirm('Desea quitar el usuario \'{grupos.usuarios.usuario.username}\' de este grupo?')) {return true} else {return false}"><img src="../images/edit_remove.gif" border="0" title="Quitar Usuario" vspace="0" hspace="0"></a></td>
+			</tr>
+			<!-- END grupos.usuarios.Row -->
+		</table>
+	</div>
+</td></tr>
+</table>
+</FORM>
+<script>
+	CURRENT_TAB = getCookie("CURRENT_TAB");
+	if (!document.getElementById(CURRENT_TAB+'-tab'))
+		CURRENT_TAB = 'usuarios';
+	TabSelect(CURRENT_TAB, 'grupos_tab', 'grupos_tab_select')
+</script>

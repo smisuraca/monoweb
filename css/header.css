@@ -1,0 +1,232 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.style1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+}
+.idioma {
+	font-family: Verdana, Tahoma, Georgia;
+	font-size: 10px;
+	color: #4f5050;
+}
+.idioma_press {
+	font-family: Verdana, Tahoma, Georgia;
+	font-size: 10px;
+	color: #aaacac;
+}
+.login_title {
+	font-family: Verdana, Tahoma, Georgia;
+	font-size: 10px;
+	color: #ffffff;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	border-width: 0px;
+	border-color: #d7d7d7;
+}
+
+.user_login {
+	font-family: Verdana, Tahoma, Georgia;
+	font-size: 10px;
+	color: #000000;
+}
+
+.login {
+	width: 65px;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	background-color: #d7d7d7;
+	border-style: solid;
+	border-color: #4f5050;
+	border-width: 0px;
+	color: #000000;
+}
+
+.check_recordar {
+	width: 11px;
+	height: 11px;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	background-color: #d7d7d7;
+	border-style: solid;
+	border-color: #4f5050;
+	border-width: 0px;
+	color: #000000;
+}
+
+.spacer {
+	font-family: Verdana, Tahoma, Georgia;
+	font-size: 9px;
+	width: 6px;
+}
+
+.buscador_title {
+	font-family: Verdana, Tahoma, Georgia;
+	font-size: 9px;
+	color: #ffffff;
+	border-width: 0px;
+}
+
+.buscador {
+	width: 206px;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	background-color: #e3e3e3;
+	border-style: solid;
+	border-color: #4f5050;
+	border-width: 0px;
+	color: #000000;
+}
+
+.boton {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+	cursor: pointer;
+}
+
+.boton_press {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #aa0407;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.boton_submenu {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #BBBBBB;
+	cursor: pointer;
+}
+
+.boton_submenu:hover {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.boton_submenu_press {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #ffffff;
+/* 	font-weight: bold; */
+	cursor: pointer;
+}
+
+
+.sub_menu {
+	font-size: 10px;
+	background-image: url(../images/header/fondo_menu2.jpg);
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.footer {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	background-color: #39191A;
+	color: #CB9A4B;
+}
+
+.generos_footer {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	background-color: #39191A;
+	color: #CB9A4B;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 9px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	font-weight: normal;
+}
+
+.boton_menu_nuevo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+.boton_menu_nuevo:hover {
+	text-decoration: none;
+	color: #aa0407;
+	font-weight: bold;
+}
+
+.titulo_header {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        background-color: #aa0407;
+        color: #ffffff;
+}
+
+
+.titulo_encuesta {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #878384;
+}
+                        
+                        
+.btnVotar {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #878384;
+        cursor: pointer;
+}
+
+ul {
+        list-style-image:none;
+        list-style-type:none;
+        margin-top:5px;
+        margin:0px;
+        padding:3px;
+}
+
+li {
+        list-style-image:none;
+        list-style-type:none;
+        margin-top:5px;
+        margin:0px;
+        padding:3px;
+}
+
+li.nopoint {
+        list-style-type: none;
+}
+
+
+				

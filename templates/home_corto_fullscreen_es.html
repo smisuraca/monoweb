@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="../css/home_corto.css" type="text/css">
+
+
+<!--<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+<td width="1%"><img src="../images/barras/roja_left.jpg" border="0" align="absmiddle"></td>
+<td width="100%" class="barra_roja_back" align="left">&nbsp;&nbsp;{contenidos.titulo}</td>
+<td width="1%"><img src="../images/barras/roja_right.jpg" border="0" align="absmiddle"></td>
+</tr></table>
+-->
+<!-- BEGIN Nota -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="middle">
+	<td align="center">
+
+		<div id="flowplayerholder">
+			You need to have the <a href="http://www.macromedia.com/go/getflashplayer">Flash Player</a> installed and
+			a browser with JavaScript support.
+		</div>
+	
+		<script type="text/javascript">
+			var fo = new SWFObject("../swf/FlowPlayer.swf", "FlowPlayer", (screen.width - 10), (screen.height - 95 ), "7", "#000000", true);
+			fo.addParam("allowScriptAccess", "always");
+			fo.addParam("flashVars", "config={configInject: true}");
+			fo.write("flowplayerholder");
+		</script>
+
+		<script  type="text/javascript">
+		window.onload = setFlowPlayerConfig;
+		function setFlowPlayerConfig() {
+			$("FlowPlayer").setConfig(fpConf);
+		}
+		var clips = [
+			{ url: '../images/full/placa_fullscreen_inicio.jpg' },
+			{ url: 'http://www.cinevivo.org/cinevivo/files/flvs/<!-- BEGIN Cortometraje::url-video --><!-- BEGIN Link -->{links.titulo}<!-- END Link --><!-- END Cortometraje::url-video -->{calidad}.flv'},
+			{ url: '../images/full/placa_fullscreen_fin.jpg' }
+		];
+		var fpConf = {
+			playList: clips,
+			showPlayList: false,
+			baseURL: '',
+			autoPlay: true,
+			autoBuffering: true,
+			startingBufferLength: 5,
+			bufferLength: 5,
+			loop: false,
+			hideControls: false,
+			initialScale: 'fill'
+		}
+		</script>
+	</td>
+	</tr>
+</table>
+

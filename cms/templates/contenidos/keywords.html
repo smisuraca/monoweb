@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>:: Keywords ::</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+</head>
+<body bgcolor="#CCCCCC" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<script>
+     function GetVals(obj) {
+	 	var cadena = "";
+	 	for (var i = 0; i < obj.length; i++) {      
+			if (obj.options[i].selected == true) {
+				cadena += obj.options[i].value+" /";
+			}
+		}
+		eval("window.opener.document.form.extra1").value = cadena;
+	 }
+</script>
+<form name="form1" method="post" action="">
+<b>Keywords</b><br>
+Use Ctrl+Mouse para marcar<br>
+<select name="keywords" size="12" multiple>
+	<option value="kwalm">Artistas-Almada</option>
+	<option value="kwlar">Artistas-Larry</option>
+	<option value="kwcam">Artistas-Campi</option>
+	<option value="kwfen">Artistas-Fena</option>
+	<option value="kwstu">Artistas-Sturze</option>
+	<option value="kwfeu">Artistas-Feudale</option>
+	<option value="kwfla">Artistas-Flavio</option>
+	<option value="kwpab">Artistas-Pablo</option>
+	<option value="kwyay">Artistas-Yayo</option>
+	<option value="kwkor">Artistas-Korol</option>
+	<option value="kwjos">Artistas-Jos&eacute; Mar&iacute;a</option>
+	<option value="kwwal">Artistas-Waldo</option>
+	<option value="kwpac">Artistas-Pachu</option>
+	<option value="kwrob">Artistas-Roberto</option>
+	<option value="kwrod">Artistas-Rodrigo</option>
+	<option value="kwbif">Artistas-Bifulco</option>
+	<option value="kwfre">Artistas-Freddy</option>
+	<option value="kwtur">Artistas-Turco</option>
+	<option value="kwpic">Artistas-Pichu</option>
+	<option value="kwcamaras">Sketchs-C&aacute;maras ocultas</option>
+	<option value="kwenviado">Sketchs-El enviado</option>
+	<option value="kwcun">Sketchs-Gran Cu&ntilde;ado</option>
+	<option value="kwgh">Sketchs-Gran Hermano</option>
+	<option value="kwnovelas">Sketchs-Las novelas</option>
+	<option value="kwtangue">Sketchs-Los tangueros</option>
+	<option value="kwtaxi">Sketchs-Los taxi boys</option>
+	<option value="kwreve">Sketchs-Los reverendos</option>
+	<option value="kwreclutas">Sketchs-Los reclutas</option>
+	<option value="kwjaimitos">Sketchs-Los Jaimitos</option>
+</select>
+<div align="right">
+    <input type="image" onClick="GetVals(document.form1.keywords);window.close();" alt="Guardar" src="../../images/save_mini.gif" width="16" height="16">
+    <input type="image" onClick="window.close();" alt="Salir" src="../../images/salir_mini.gif" width="16" height="16">
+</div>
+</form>
+</body>
+</html>

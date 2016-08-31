@@ -1,0 +1,81 @@
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr valign="top">
+	<td width="50%">
+
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr height="1%"><td>
+		<!-- BEGIN Nota -->
+		<div class="caja_gris_separador"></div>
+	<div id="estrenos_foto" class="caja_gris_foto">
+	<a title="{contenidos.titulo}" href="./index.php?tpl=home_corto&idcontenido={contenidos.idcontenido}"  idcontenido="{contenidos.idcontenido}">
+	<!-- BEGIN image-gif -->
+	<!-- BEGIN Link -->
+	<img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" alt="{contenidos.titulo}" border="0">
+	<!-- END Link -->
+	<!-- END image-gif -->
+	</a>
+	</div>
+	
+	<div id="estrenos_datos" class="caja_gris_datos_cortos">
+		<!-- BEGIN contenidos.fecha.format -->%Y<!-- END contenidos.fecha.format -->
+		<div id="resultado" class="caja_gris_ranking">
+<!-- 		<div class="caja_gris_titulo_corto">{contenidos.extra1} Visitas<br>&nbsp;<br>&nbsp;</div> -->
+		<img id="resultado{contenidos.idcontenido}_1" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+		<img id="resultado{contenidos.idcontenido}_2" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+		<img id="resultado{contenidos.idcontenido}_3" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+		<img id="resultado{contenidos.idcontenido}_4" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+		<img id="resultado{contenidos.idcontenido}_5" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+		<div class="caja_gris_titulo_corto" style="text-align:right">{contenidos.extra4}<br>&nbsp;</div>
+<!-- 		<b>{contenidos.extra4}</b> -->
+		</div>
+		<div class="caja_gris_titulo_corto"><a title="{contenidos.titulo}" class="link_negro"  href="../home/?tpl=home_corto&idcontenido={contenidos.idcontenido}">{contenidos.titulo}</a></div>
+		<div class="caja_gris_sinopsis">{contenidos.bajada}</div>
+		<div class="caja_gris_datos_varios"><a title="{contenidos.titulo}" class="link_rojo"  href="../home/?tpl=home_corto&idcontenido={contenidos.idcontenido}">{contenidos.titulo_corto} | <span id="Direccion_{contenidos.idcontenido}"></span> | {contenidos.fecha} | <!-- BEGIN Cortometraje::Duracion --> <!-- BEGIN Link -->{links.titulo} min<!-- END Link --> <!-- END Cortometraje::Duracion --></a>
+		</div>
+	</div>
+	<script>
+		var c; var Aux = new Array();
+		c = 0;<!-- BEGIN Cortometraje::Direccion --><!-- BEGIN Link -->Aux[c] = "{links.titulo}";c++;<!-- END Link --><!-- END Cortometraje::Direccion -->
+		$('Direccion_{contenidos.idcontenido}').innerHTML = Aux.join(", ");
+		var resultado = (Math.round({contenidos.extra4}));
+		for (var x = 1; x <= resultado; x++) {	$('resultado{contenidos.idcontenido}_'+x).src = "../images/web2/star_on.gif"; }
+		for (var y = x; y <= 5; y++) {	$('resultado{contenidos.idcontenido}_'+y).src = "../images/web2/star_off.gif"; }
+	</script>
+
+		<!-- END Nota -->
+
+		<!-- BEGIN Nota_2 -->
+		<div class="caja_gris_separador"></div>
+		
+<!-- 		Visto: {contenidos.extra1} -->
+		<div id="estrenos_datos" class="caja_gris_datos_cortos_estreno">
+			<!-- BEGIN contenidos.fecha.format -->%Y<!-- END contenidos.fecha.format -->
+			<div id="resultado" class="caja_gris_ranking">
+			<img id="resultado{contenidos.idcontenido}_1" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+			<img id="resultado{contenidos.idcontenido}_2" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+			<img id="resultado{contenidos.idcontenido}_3" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+			<img id="resultado{contenidos.idcontenido}_4" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+			<img id="resultado{contenidos.idcontenido}_5" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking">
+			<div class="caja_gris_titulo_corto" style="text-align:right">{contenidos.extra4}<br>&nbsp;</div>
+	<!-- 		<b>{contenidos.extra4}</b> -->
+			</div>
+			<div class="caja_gris_titulo_corto"><a title="{contenidos.titulo}" class="link_negro"  href="../home/?tpl=home_corto&idcontenido={contenidos.idcontenido}">{contenidos.titulo}</a></div>
+			<div class="caja_gris_sinopsis">{contenidos.bajada}</div>
+			<div class="caja_gris_datos_varios"><a title="{contenidos.titulo}" class="link_rojo"  href="../home/?tpl=home_corto&idcontenido={contenidos.idcontenido}">{contenidos.titulo_corto} | <span id="Direccion_{contenidos.idcontenido}"></span> | {contenidos.fecha} | <!-- BEGIN Cortometraje::Duracion --> <!-- BEGIN Link -->{links.titulo} min<!-- END Link --> <!-- END Cortometraje::Duracion --></a>
+			</div>
+		</div>
+		<script>
+			var c; var Aux = new Array();
+			c = 0;<!-- BEGIN Cortometraje::Direccion --><!-- BEGIN Link -->Aux[c] = "{links.titulo}";c++;<!-- END Link --><!-- END Cortometraje::Direccion -->
+			$('Direccion_{contenidos.idcontenido}').innerHTML = Aux.join(", ");
+			var resultado = (Math.round({contenidos.extra4}));
+			for (var x = 1; x <= resultado; x++) {	$('resultado{contenidos.idcontenido}_'+x).src = "../images/web2/star_on.gif"; }
+			for (var y = x; y <= 5; y++) {	$('resultado{contenidos.idcontenido}_'+y).src = "../images/web2/star_off.gif"; }
+		</script>
+		<!-- END Nota_2 -->
+
+		</td></tr>
+		</table>
+</td>
+</tr>
+</table>
+<br><br><br><br>

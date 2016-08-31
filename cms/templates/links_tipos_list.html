@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<table width="100%" border="0" height="100%" cellpadding="2" cellspacing="0" class="links_tipos">
+<tr><td valign="top">
+	<table width="100%" border="0" cellpadding="4" cellspacing="1">
+		<tr><td colspan="5">
+		<strong>Listando Tipos de MMedias</strong>
+		</td></tr>
+		<tr align="center" class="links_tipos_light">
+		<td width="1%"><b>C&oacute;digo</b></td>
+		<td><b>Descripcion</b></td>
+		<td> <b>Default path</b></td>
+		<td align="center"> <b>Target</b> </td>
+		<td width="1%" nowrap>&nbsp;</td>
+		</tr>
+		<!-- BEGIN links_tipos.Row -->
+		<tr class="tabledata" onmouseover="mOvr(this, 'links_tipos_light')" onmouseout="mOut(this, 'tabledata')">
+		<td width="1%" align="right"><b>{links_tipos.idlink_tipo}</b></td>
+		<td>{links_tipos.descripcion}</td>
+		<td>{links_tipos.defaultpath}</td>
+		<td>{links_tipos.target}</td>
+		<td align="center" width="1%" nowrap>
+		  	<a href="?event=edit&idlink_tipo={links_tipos.idlink_tipo}">
+		  	<img src="../images/editar.gif" width="16" height="16" alt="Editar" border="0">
+			</a>
+			<a href="?event=delete,list&idlink_tipo={links_tipos.idlink_tipo}"
+			onClick="if (confirm('Desea borrar el tipo de multimedia {links_tipos.descripcion}?')) {return true;} else {return false;}">
+			<img src="../images/borrar_mini.gif" alt="Borrar" border="0" >
+			</a>
+			</td>
+		</tr>
+		<!-- END links_tipos.Row -->
+	</table>
+</td></tr>
+</table>

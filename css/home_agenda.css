@@ -1,0 +1,259 @@
+.barra_roja_back {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	background-image: url(../images/barras/roja_middle.jpg);
+	color: #ffffff;
+	text-transform: lowercase;
+}
+
+.corto_genero {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #000000;
+}
+
+.corto_titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+}
+
+.corto_director {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px;
+	font-style: italic;
+	color: #000000;
+}
+
+.corto_sinopsis {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #000000;
+}
+
+.corto_fecha {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+}
+
+.corto_destacado_genero {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #878384;
+}
+
+.corto_destacado_titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #878384;
+}
+
+.corto_destacado_director {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px;
+	font-style: italic;
+	color: #878384;
+}
+
+.corto_destacado_sinopsis {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #878384;
+}
+
+
+
+
+
+
+.espacio {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 4px;
+}
+
+.corto_ficha {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #333333;
+}
+
+.barra_comentarios {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #ffffff;
+	background-image: url(../images/barras/gris_middle.jpg);
+}
+
+.foro_contenido {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #615F60;
+	background-color: #E2E2E2;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #9C9C9C;
+}
+
+.foro_fondo_contenido {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #615F60;
+	background-color: #E2E2E2;
+}
+
+.foro_fondo_input {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #828282;
+	background-color: #FFFFFF;
+}
+
+.foro_input {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #7F7F7F;
+	width: 100%;
+	border: 0;
+	background-color: #F1F1F1;
+	overflow: hidden;
+}
+
+.boton_agenda {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+	cursor: pointer;
+}
+
+.boton_agenda_press {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.columna_izquierda {
+	border-top-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+	border-right-style: solid;
+	border-color: #878384;
+	border-width: 1px;
+}
+
+.mas_info_Convocatoria {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #0F7902;
+}
+
+.mas_info_Festival {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #787408;
+}
+
+.mas_info_Evento {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #1B33AD;
+}
+
+.mas_info_Cinevivo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #AA0406;
+}
+
+.agenda_detalle {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+}
+
+.fecha_Cinevivo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: block;
+}
+
+.fecha_Ciclo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: none;
+}
+
+.fecha_Convocatoria {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: none;
+}
+
+.fecha_Festival {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: block;
+}
+
+.fecha_Evento {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: block;
+}
+
+.fin_Convocatoria {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: block;
+}
+
+.fin_Cinevivo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: none;
+}
+
+.fin_Festival {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: none;
+}
+
+.fin_Evento {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: none;
+}
+
+.fin_Ciclo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+	display: none;
+}
+
+.option_bold {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.pointer {
+	cursor: pointer;
+}
+

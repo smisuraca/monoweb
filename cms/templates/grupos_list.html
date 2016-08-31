@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<table width="100%" border="0" cellpadding="2" cellspacing="0" class="grupos">
+<tr><td valign="top">
+	<table width="100%" border="0" cellpadding="4" cellspacing="1">
+		<tr>
+		<td colspan=3><b>Listando Grupos</b></td>
+		</tr>
+		<tr align="center" class="grupos_light">
+		<td width="1%"> <b>C&oacute;digo</b></td>
+		<td> <b>Nombre</b></td>
+		<td width="1%"><img src="../images/spacer.gif" width="40" height="4"></td>
+		</tr>
+		<!-- BEGIN grupos.Row -->
+		<tr class="tabledata" onmouseover="mOvr(this, 'grupos_light')" onmouseout="mOut(this, 'tabledata')">
+		<td width="1%" align="right"><b>{grupos.idgrupo}</b></td>
+		<td>{grupos.nombre}</td>
+		<td align=center width="1%"><a href="index.php?event=edit&idgrupo={grupos.idgrupo}"><img src="../images/editar.gif" width="16" height="16" border="0" alt="Editar"></a><a href="index.php?event=delete,list&idgrupo={grupos.idgrupo}"><img src="../images/borrar_mini.gif" width="16" height="16" border="0" alt="Borrar" onClick="if (confirm('Desea borrar el grupo {grupos.nombre}?')) {form.event.value='delete'; return true} else {return false}"></a></td>
+		</tr>
+		<!-- END grupos.Row -->
+	</table>
+</td></tr></table>

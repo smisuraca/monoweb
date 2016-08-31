@@ -1,0 +1,47 @@
+<!-- BEGIN Nota -->
+<!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+
+<!--meta property="og:image" content="http://www.cinevivo.org/images/header/logo1.jpg"/-->
+
+		<div style="font-size:16px; color:#878787">{contenidos.titulo_corto}</div>
+		<div class="line"></div>
+		<div style="font-size:14px">{contenidos.fecha}</div>
+		<div style="font-size:24px"><b>{contenidos.titulo}</b></div>
+
+		<span class="nota_bajada">{contenidos.volanta}</span>
+		<br><br>
+
+                <!-- BEGIN Notas::Fotos -->
+                <!-- BEGIN Link -->
+                <link rel="image_src" href="http://www.cinevivo.org/getmmedia.php?idlink={links.idlink}&.jpg" />
+                <img alt="Foto Nota" border="0" src="http://www.cinevivo.org/getmmedia.php?idlink={links.idlink}&.jpg">
+                <br><br>
+                <!-- END Link -->
+                <!-- END Notas::Fotos -->
+                
+                
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=hantartico"></script>
+<!-- AddThis Button END -->
+		<br>
+		
+		<span class="nota_texto">
+		{contenidos.texto}
+		</span>
+		
+
+		<br>
+		<div id="fb-root"></div><script src="http://connect.facebook.net/es_AR/all.js#xfbml=1"></script><fb:comments href="http://www.cinevivo.org/home/?tpl=home_nota&idcontenido={contenidos.idcontenido}" num_posts="10" width="600"></fb:comments>
+		
+		
+		<!--/script> <a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js"></script-->
+		<!--a class="corto_titulo" href="../home/?tpl=home_editorial" title="editorial"><< Editorial</a-->
+
+
+<!-- END Nota -->

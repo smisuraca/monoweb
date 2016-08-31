@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<table width="100%" border="0" cellspacing="0" cellpadding="2" class="areas" height="100%">
+	<tr valign="top"><td>
+		<table width="100%" border="0" cellpadding="4" cellspacing="1">
+		<tr><td colspan="3">
+		<strong>Listando Areas</strong>
+		</td></tr>
+		<tr align="center" class="areas_light">
+			<td width="1%"> <b>C&oacute;digo</b></td>
+			<td> <b>Descripción</b></td>
+			<td width="1%" nowrap>&nbsp;</td>
+		</tr>
+		<!-- BEGIN areas.Row -->
+		<tr class="tabledata" onMouseOver="mOvr(this, 'areas_light')" onMouseOut="mOut(this, 'tabledata')">
+			<td width="1%" align="right"><b>{areas.idarea}</b></td>
+			<td>{areas.descripcion}</td>
+			<td width="1%" align="center" nowrap><a href="?event=edit&idarea={areas.idarea}"><img src="../images/editar.gif" width="16" height="16" title="Editar" border="0"></a><b><a href="?event=delete,list&idarea={areas.idarea}"><img src="../images/borrar_mini.gif" width="16" height="16" title="Borrar" border="0" onClick="if (confirm('Desea borrar el area {areas.idarea}?')) {document.form.event.value='borrar'; return true} else {return false}"></a></b></td>
+		</tr>
+		<!-- END areas.Row -->
+		</table>
+	</td></tr>
+</table>

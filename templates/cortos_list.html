@@ -1,0 +1,47 @@
+		<table border="0" cellspacing="0" cellpadding="5" width="100%" style="font-size: 12px; background-color:#d7d7d7">
+		<tr valign="top">
+	    	<td width="100%"></td>
+	    	<td width="1%" nowrap>Ordenar por:</td>
+	    	<td width="1%" style="font-size: 14px" nowrap><a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by=titulo&page=1">T&iacute;tulo</a></td>
+	    	<td width="1%" style="font-size: 14px" nowrap><a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by=reproducciones desc&page=1">+Vistos</a></td>
+	    	<td width="1%" style="font-size: 14px" nowrap><a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by=id desc&page=1">Nuevos</a></td>
+	    	</tr>
+	    	</table>
+
+		<!-- BEGIN ficha.Row -->
+		<div class="line"></div>
+		
+	        <div id="estrenos_foto" class="caja_gris_foto">
+                <a title="{ficha.sinopsis_es}" href="./?tpl=home&evento=cortos_edit&id={ficha.id}">
+					<img width="160" height="90" src="../getmmedia.php?idlink={ficha.image_gif}&url={ficha.url}&imagen.jpg" align="absmiddle"  border="0">
+		</a>
+	        </div>
+	        
+	    	<div style="float: right;font-size:12px">{ficha.reproducciones} <img align="absmiddle" src="../images/OJO_24x24.gif" border="0"></div>
+		
+<!-- 		<div id="estrenos_datos" class="caja_gris_datos_cortos_estreno"> -->
+			<div class="caja_gris_titulo_corto"><a title="{ficha.sinopsis_es}" class="link_negro"  href="./?tpl=home&evento=cortos_edit&id={ficha.id}">{ficha.titulo}</a></div>
+			<!--div class="caja_gris_sinopsis">{ficha.sinopsis_es}</div-->
+			<div style="font-size: 14px">Dir. {ficha.direccion} ({ficha.anno_realizacion})</div>
+			<div style="font-size: 12px">{ficha.duracion} min</div>
+			<br>
+			<br>
+			<br>
+<!-- 			 -->
+<!-- 		</div> -->
+		<!-- END ficha.Row -->
+
+		<center>
+		<table width="100%" cellpadding="5" style="font-size: 12px; background-color:#d7d7d7"><tr><td>
+			<center>
+			<a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by={order_by}&page=1">|<</a>&nbsp;&nbsp;&nbsp;
+			<a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by={order_by}&page={back}"><<</a>&nbsp;
+			<!-- BEGIN CORTOS.PAGINADO.PAGINA -->
+			&nbsp;&nbsp;<a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by={order_by}&page={page}">{page}</a>&nbsp;&nbsp;
+			<!-- END CORTOS.PAGINADO.PAGINA -->
+			{page_pre}
+			<span style="font-size:22px">&nbsp;{page}&nbsp;</span>
+			{page_pos}&nbsp;
+			<a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by={order_by}&page={next}">>></a>&nbsp;&nbsp;&nbsp;
+			<a class="link_negro" href="?tpl=home&genero={genero}&material={material}&evento=cortos_list&cortos_order_by={order_by}&page={fin}">>|</a>
+		</td></tr></table>

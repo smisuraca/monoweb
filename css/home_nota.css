@@ -1,0 +1,193 @@
+.barra_roja_back {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	background-image: url(../images/barras/roja_middle.jpg);
+	color: #ffffff;
+}
+
+.corto_genero {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #000000;
+}
+
+.corto_titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+}
+
+.nota_titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 18px;
+	color: #000000;
+}
+
+.nota_bajada {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 16px;
+	color: #000000;
+}
+
+.nota_fecha {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #878384;
+}
+
+.nota_texto {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+}
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+}
+
+.nota_titulo_corto {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 14px;
+	color: #000000;
+}
+
+.corto_director {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px;
+	font-style: italic;
+	color: #000000;
+}
+
+.corto_sinopsis {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #000000;
+}
+
+.corto_fecha {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #000000;
+}
+
+.corto_destacado_genero {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #878384;
+}
+
+.corto_destacado_titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #878384;
+}
+
+.corto_destacado_director {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px;
+	font-style: italic;
+	color: #878384;
+}
+
+.corto_destacado_sinopsis {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	color: #878384;
+}
+
+
+
+
+
+
+.espacio {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 4px;
+}
+
+.corto_ficha {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #333333;
+}
+
+.barra_comentarios {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #ffffff;
+	background-image: url(../images/barras/gris_middle.jpg);
+}
+
+.foro_contenido {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #615F60;
+	background-color: #E2E2E2;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #9C9C9C;
+}
+
+.foro_fondo_contenido {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: #615F60;
+	background-color: #E2E2E2;
+}
+
+.foro_fondo_input {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #828282;
+	background-color: #FFFFFF;
+}
+
+.foro_input {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #7F7F7F;
+	width: 100%;
+	border: 0;
+	background-color: #F1F1F1;
+	overflow: hidden;
+}
+
+.calidad {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #000000;
+	cursor: pointer;
+}
+
+.calidad_seleccionada {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: #7F7F7F;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	cursor: none;
+	color: #000000;
+}
+
+a {
+	color: #000000;
+}
+
+.foto_left {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.foto_right {
+	float: right;
+	margin: 10 10 10 10;
+}
+

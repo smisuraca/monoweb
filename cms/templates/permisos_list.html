@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+ 
+<table width="100%" border="0" cellpadding="2" cellspacing="0" class="permisos">
+  <tr>
+    <td valign="top"> 
+      <table width="100%" border="0" cellpadding="4" cellspacing="1">
+        <tr>
+          <td colspan="3"><b>Listando Permisos</b></td>
+        </tr>
+        <tr align="center" class="permisos_light"> 
+          <td width="1%"> <b>C&oacute;digo</b></td>
+          <td> <b>Nombre</b></td>
+          <td> <b>Descripcion</b></td>  
+          <td width="1%"><img src="../images/spacer.gif" width="40" height="8"> 
+          </td>
+        </tr>
+        <!-- BEGIN permisos.Row -->
+        <tr class="tabledata" onmouseover="mOvr(this, 'permisos_light')" onmouseout="mOut(this, 'tabledata')"> 
+          <td width="1%" align="right"><b>{permisos.idpermiso}</b></td>
+          <td>{permisos.nombre}</td>
+          <td>{permisos.descripcion}</td>	  
+          <td align=center width="1%"><a href="index.php?event=edit&idpermiso={permisos.idpermiso}"><img src="../images/editar.gif" width="16" height="16" border="0" alt="Editar"></a><a href="index.php?event=delete,list&idpermiso={permisos.idpermiso}"><img src="../images/borrar_mini.gif" width="16" height="16" border="0" alt="Borrar" onClick="if (confirm('Desea borrar el permiso \'{permisos.nombre}\'?')) {form.event.value='borrar'; return true} else {return false}"></a></td>
+        </tr>
+        <!-- END permisos.Row -->
+      </table>
+</td></tr></table>

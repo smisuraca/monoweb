@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<title>Fullscreen HTMLArea</title>
+<script type="text/javascript">
+function getParams()
+{
+	var BASE  = window.document.baseURI || window.document.URL
+	var idx = BASE.indexOf('?');
+	var params = new Array();
+	if (idx != -1) {
+		var pairs = BASE.substring(idx+1, BASE.length).split('&');
+		for (var i=0; i<pairs.length; i++) {
+			nameVal = pairs[i].split('=');
+			params[nameVal[0]] = unescape(nameVal[1]);
+		}
+	}
+	return params;
+}
+</script>
+
+<script type="text/javascript">
+	_editor_url = './';
+	_editor_lang = 'en';
+	HTTP_VARS = getParams();
+	var editor	   = null;	// to be initialized later [ function init() ]
+</script>
+
+<script type="text/javascript" src="htmlarea.js"></script>
+
+<!-- browser takes a coffee break here -->
+<script type="text/javascript">
+
+HTMLArea.loadPlugin("ContextMenu");
+
+/* ---------------------------------------------------------------------- *\
+   Function    :
+   Description :
+\* ---------------------------------------------------------------------- */
+function _CloseOnEsc(ev) {
+	ev || (ev = window.event);
+	if (ev.keyCode == 27) {
+		window.close();
+		return;
+	}
+}
+
+/* ---------------------------------------------------------------------- *\
+   Function    : resize_editor
+   Description : resize the editor when the user resizes the popup
+\* ---------------------------------------------------------------------- */
+function editor_resize() {  // resize editor to fix window
+	var newHeight;
+	if (document.all) {
+		// IE
+		newHeight = document.body.offsetHeight - editor._toolbar.offsetHeight;
+		if (newHeight < 0) { newHeight = 0; }
+	} else {
+		// Gecko
+		newHeight = window.innerHeight - editor._toolbar.offsetHeight;
+	}
+	if (editor.config.statusBar) {
+		newHeight -= editor._statusBar.offsetHeight;
+	}
+	editor._textArea.style.height = editor._iframe.style.height = newHeight + "px";
+}
+
+/* ---------------------------------------------------------------------- *\
+   Function    : init
+   Description : run this code on page load
+\* ---------------------------------------------------------------------- */
+function editor_init()
+{
+	var config = new HTMLArea.Config(); // create a new configuration object
+                                    // having all the default values
+	config.width = '100%';
+	config.height = 'auto';
+
+	// change maximize button to minimize button
+	config.btnList["popupeditor"] = [ 'Save', _editor_url + 'images/ed_save.gif', true,
+					  function() { update_parent(); window.close(); } ];
+
+	// generate editor and resize it
+	editor = new HTMLArea("editor", config)
+	editor.registerPlugin(ContextMenu);
+	editor.generate();
+	editor._iframe.style.width = "100%";
+	editor._textArea.style.width = "100%";
+	editor_resize();
+
+	// set child window contents and event handlers, after a small delay
+
+	setTimeout(
+		function()
+		{
+			// setup event handlers
+			document.body.onkeypress = _CloseOnEsc;
+			editor._doc.body.onkeypress = _CloseOnEsc;
+			editor._textArea.onkeypress = _CloseOnEsc;
+			window.onresize = editor_resize;
+			editor.insertHTML(eval("window.opener.document."+HTTP_VARS["form"]+"."+HTTP_VARS["input"]).value);
+		},
+		300
+	);			 // give it some time to meet the new frame
+
+}
+
+/* ---------------------------------------------------------------------- *\
+   Function    : update_parent
+   Description : update parent window editor field with contents from child window
+\* ---------------------------------------------------------------------- */
+function update_parent()
+{
+	// use the fast version
+	eval("window.opener.document."+HTTP_VARS["form"]+"."+HTTP_VARS["input"]).value = editor.getInnerHTML();
+}
+</script>
+
+<style type="text/css"> html, body { height: 100%; margin: 0px; border: 0px; background-color: buttonface; } </style>
+</head>
+<body scroll="no" onload="setTimeout(function(){editor_init();}, 300)">
+	<form style="margin: 0px; border: 1px solid; border-color: threedshadow threedhighlight threedhighlight threedshadow;">
+		<textarea name="editor" id="editor" style="width:100%; height:300px">&nbsp;</textarea>
+	</form>
+</body>
+</html>

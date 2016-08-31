@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" class="contenido"><tr><td valign="top">
+<FORM NAME="form" method="post" action="index.php">
+    <INPUT TYPE=HIDDEN NAME='idcontenido' VALUE="{contenidos.idcontenido}">
+    <INPUT TYPE=HIDDEN NAME='event' VALUE="">
+        <table width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tr><td colspan="6">
+            <table width="100%"><tr>
+                <td><b>Seleccione las multimedias que desea agregar al contenido: {contenidos.idcontenido}. {contenidos.titulo}</b></td>
+                  <td align="right" width="1%" nowrap> 
+                    <input type='image' name='boton' value='buscar' onClick="form.event.value='links_form_buscar'" src="../images/buscar.gif" width="22" height="22" alt="Buscar">
+                    <input type='image' name='boton' value='grabar' onClick="form.event.value='links_grabar'" src="../images/save.gif" width="22" height="22" alt="Grabar">
+                    <input type='image' name='boton' value='salir'  onClick="form.event.value='form'" src="../images/salir.gif" width="22" height="22" alt="Salir">
+                </td>
+            </tr></table>
+        </td></tr>
+        <tr align="center" class="contenido_light">
+          <td width="1%"><b>C&oacute;digo</b></td>
+          <td><b>Link Tipo</b></td>
+          <td><b>Título</b></td>
+          <td><b>Url</b></td>
+          <td><b>Orden</b></td>
+            <td width="1%" align="center" nowrap>&nbsp;</td>
+        </tr>
+        <!-- BEGIN links.Row -->
+        <tr class="tabledata" onmouseover="mOvr(this, 'contenido_light')" onmouseout="mOut(this, 'tabledata')">
+          <td width="1%" align="right"><b>{links.idlink}</b></td>
+          <td>{links_tipos.descripcion}</td>
+          <td>{links.titulo}</td>
+          <td>{links.url}</td>
+          <td align="center">{links.orden}</td>
+            <td width="1%" align="center" nowrap>
+              <input type="checkbox" name="idlinks[]" value="{links.idlink}">
+            </td>
+        </tr>
+        <!-- END links.Row -->
+      </table>
+</FORM>
+    </td>
+  </tr>
+</table>

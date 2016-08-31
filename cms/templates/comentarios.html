@@ -1,0 +1,127 @@
+<link rel="stylesheet" type="text/css" media="all" href="../css/calendar-win2k-1.css" title="win2k-cold-1" />
+<script type="text/javascript" src="../js/calendar.js"></script>
+<script type="text/javascript" src="../js/lang/calendar-es.js"></script>
+<script type="text/javascript" src="../js/calendar-setup.js"></script>
+
+
+<script type="text/javascript" src="../js/prototype.js"></script>
+<script type="text/javascript" src="../js/scriptaculous.js"></script>
+<script type="text/javascript" src="../js/unittest.js"></script>
+<script type="text/javascript" src="../js/player.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/json.js"></script>
+
+<script type="text/javascript" src="../js/comentarios.js"></script>
+
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action=''>
+<input type=HIDDEN name='event' value="">
+
+<input type="hidden" name="comentarios_limit_from"  id="comentarios_limit_from"  value="">
+<input type="hidden" name="comentarios_limit_count" id="comentarios_limit_count" value="">
+
+
+<table width="100%" height="100%" border="0" cellpadding="2" cellspacing="0" class="contenidos">
+<tr valign="top"><td>
+	<table width="100%" cellpadding="4" cellspacing="1" border="0">
+		<tr align="center">
+			<td colspan="2"><b>Moderar Comentarios</b></td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap="nowrap">
+				<b>Fecha</b>
+			</td>
+			<td class="form" width="100%">
+				<input type="text" name="fecha" id="fecha" size="10" maxlength="10" value="{date}" class="input_input">
+				<a href="javascript:;"><img id="bt_fecha" src="../images/bt_fecha.gif" title="Fecha/Hora" border="0" align="absmiddle"> </a>
+				<script type="text/javascript">
+					Calendar.setup({
+						inputField     :    "fecha",      // id of the input field
+						ifFormat       :    "%Y-%m-%d",       // format of the input field
+						showsTime      :    true,            // will display a time selector
+						button         :    "bt_fecha",   // trigger for the calendar (button ID)
+						singleClick    :    false,           // double-click mode
+						step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+					});
+				</script>
+				</font>
+			</td>
+		</tr>
+<!--		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Titulo de Contenido</b></td>
+			<td class="form"><input type=TEXT name='contenido' id='contenido' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>-->
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Nombre</b></td>
+			<td class="form"><input type=TEXT name='nombre' id='nombre' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+<!--		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Tipo de Contenido</b></td>
+			<td class="form">
+				<select name="idtipo" id='idtipo' class="ta">
+					<option value="">Seleccione un Tipo de Contenido</option>-->
+					<!-- BEGIN contenidos_tipos.Row -->
+<!-- 					<option value="{contenidos_tipos.idcontenido_tipo}">{contenidos_tipos.descripcion}</option> -->
+					<!-- END contenidos_tipos.Row -->
+<!--				</select>
+			</td>
+		</tr>-->
+		<tr align="right" class="contenidos_light">
+			<td colspan="2">
+			<input type='button' value="Reestablecer" title="Reestablecer" width="22" height="22" name="reestablecer" id="reestablecer">
+			<input type='button' value="Buscar" title="Grabar" width="22" height="22" name="buscar" id="buscar">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><div id="listcomentarios_place_pager"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><div id="listcomentarios_place"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><div id="comentarios_status"></td>
+		</tr>
+	</table>
+</td></tr>
+</table>
+</FORM>
+
+<textarea id="listcomentarios" style="display:none">
+<table width="100%" border="0" cellpadding="4" cellspacing="1">
+	<tr><td colspan="5"></td></tr>
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap><input type="checkbox" id="chequear_todas" name="chequear_todas"></td>
+		<td width="1%" nowrap>Fecha</td>
+		<td width="20%">Contenido</td>
+		<td width="1%" nowrap>Tipo Contenido</td>
+		<td width="100%">Mensaje</td>
+		<td width="1%" nowrap>Nombre</td>
+		<td width="1%" nowrap>Mail</td>
+		<td width="1%" nowrap></td>
+	</tr>
+	{for f in comentarios}
+	<tr class="tabledata" onmouseover="mOvr(this, 'contenidos_light')" onmouseout="mOut(this, 'tabledata')" valign="top">
+		<td width="1%" nowrap><input type="checkbox" class="check_comentario" name="comentario_${f.id}" id=${f.idforo}></td>
+		<td width="1%" nowrap>${f.fecha}</td>
+		<td width="20%">${f.contenido.titulo}</td>
+		<td width="1%" nowrap>${f.contenido.tipo.descripcion}</td>
+		<td width="100%">${f.mensaje}</td>
+		<td width="1%" nowrap>${f.nombre}</td>
+		<td width="1%" nowrap>${f.mail}</td>
+		<td width="1%" nowrap></td>
+	</tr>
+	{/for}
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap><img src="../images/borrar_mini.gif" class="borrar_comentarios pointer"></td>
+		<td width="1%" nowrap></td>
+		<td width="20%"></td>
+		<td width="1%" nowrap></td>
+		<td width="100%"></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+	</tr>
+</table>
+</textarea>

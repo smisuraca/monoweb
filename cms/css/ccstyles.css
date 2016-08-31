@@ -1,0 +1,241 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px
+;
+}
+
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #444444
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #000000
+}
+
+a.bold { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-weight: bold;
+	color: #444444
+}
+
+a.bold:hover { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #000000
+}
+
+a.logout {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #FFFFFF
+}
+
+a.logout:hover {
+	text-decoration: underline;
+	color: #AAAAAA
+}
+
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+    color: #000000
+}
+
+
+table { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+}
+
+.text { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	color: #FFFFFF
+	border: 1px solid #000000;
+	margin: 0px;
+} 
+
+ 
+select {
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	border: 1px solid #000000;
+	margin: 0px;
+}
+
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	margin: 0px;
+}
+
+
+.input_input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	border: 1px solid #000000;
+	margin: 0px;
+}
+
+
+.ta {
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	border: 1px solid #000000;
+	margin: 0px;
+}
+
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.marco {  background-color: #444444; color: #FFFFFF}
+.marco_light {  background-color: #999999; color: #FFFFFF}
+.marco_dark {  background-color: #000000; color: #FFFFFF}
+
+
+.comentarios,
+.usuarios,
+.grupos,
+.permisos
+{
+	background-color: #DED7C6;
+}
+
+.comentarios_light,
+.usuarios_light,
+.grupos_light,
+.permisos_light
+{
+	background-color: #F5F3ED;
+}
+
+.grupos_tab {
+    background-color: #DED7C6;
+	cursor: pointer;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-color: #333333;
+    border-width: 1px;
+}
+
+.grupos_tab_select {
+    background-color: #F5F3ED;
+	border-bottom-style: none;
+}
+
+.grupos_tab_null {
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+    border-color: #333333;
+    border-width: 1px;
+}
+
+
+.foros,
+.areas,
+.contenidos
+{
+	background-color: #F0B794;
+}
+
+.foros_light,
+.areas_light,
+.contenidos_light
+{
+	background-color: #FAE8DD;
+}
+
+.contenidos_tab {
+	background-color: #E6D4C9;
+	cursor: pointer;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-color: #333333;
+	border-width: 1px;
+}
+
+.contenidos_tab_select {
+    background-color: #FAE8DD;
+	border-bottom-style: none;
+ }
+
+.contenidos_tab_null {
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-color: #333333;
+	border-width: 1px;
+}
+
+
+.links_tipos,
+.contenidos_tipos
+{
+	background-color: #BFCAC6;
+}
+
+.links_tipos_light,
+.contenidos_tipos_light
+{
+	background-color: #ECEFEE;
+}
+
+.monitor {  background-color: #99ABB5}
+.monitor_light { background-color: #E1E6E9}
+
+.form {  background-color: #FFFFFF}
+
+.tabledata { background-color: #FFFFFF }
+
+.pager_fichas,
+.pager_contenidos,
+.pager_comentarios {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.inactive {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #999999;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.autocompletar {
+        border:1px solid black;
+        background-color:white;
+}
+
+
+.selected {
+        background-color: #D5A637;
+}

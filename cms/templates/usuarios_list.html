@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action=''>
+<input type=HIDDEN name='event' value="">
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0" class="usuarios">
+<tr>
+	<td valign="top"> 
+	<table width="100%" cellpadding="4" cellspacing="1" border="0">
+		<tr align="center">
+			<td colspan="2"><b>Filtros</b></td>
+		</tr>
+		<tr>
+			<td align="right" class="usuarios_light" width="1%" nowrap><b>#</b></td>
+			<td class="form"><input type=TEXT name='idusuario' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="usuarios_light" width="1%" nowrap><b>Username</b></td>
+			<td class="form"><input type=TEXT name='user' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="usuarios_light" width="1%" nowrap><b>Mail</b></td>
+			<td class="form"><input type=TEXT name='email' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="usuarios_light" width="1%" nowrap><b>Nombre</b></td>
+			<td class="form"><input type=TEXT name='nombre' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="usuarios_light" width="1%" nowrap><b>Apellido</b></td>
+			<td class="form"><input type=TEXT name='apellido' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+		<tr align="right" class="contenidos_light">
+			<td colspan="2">
+			<input type='image' onClick="form.event.value='filter,list'" src="../images/buscar.gif" title="Grabar" width="22" height="22" name="image">
+			</td>
+		</tr>
+	</table>
+
+	<table width="100%" border="0" cellpadding="4" cellspacing="1">
+		<tr>
+		<td colspan="5"><b>Listando Usuarios</b></td>
+		</tr>
+		<tr align="center" class="usuarios_light"> 
+		<td width="1%"> <b>C&oacute;digo</b></td>
+		<td width="1%"> <b>Username</b></td>
+			<td> <b>Apellido y Nombre</b></td>
+		<td width="1%"><img src="../images/spacer.gif" width="40" height="8">
+		</td>
+		</tr>
+		<!-- BEGIN usuarios.Row -->
+		<tr class="tabledata" onmouseover="mOvr(this, 'usuarios_light')" onmouseout="mOut(this, 'tabledata')">
+		<td width="1%" align="right"><b>{usuarios.idusuario}</b></td>
+		<td width="1%">{usuarios.username}</td>
+			<td>{usuarios.apellido}, {usuarios.nombre}</td>
+		<td align=center width="1%"><a href="index.php?event=edit&idusuario={usuarios.idusuario}"><img src="../images/editar.gif" width="16" height="16" border="0" alt="Editar"></a><a href="index.php?event=delete,list&idusuario={usuarios.idusuario}"><img src="../images/borrar_mini.gif" width="16" height="16" border="0" alt="Borrar"  onClick="if (confirm('Desea borrar el usuario {usuarios.nombre}, {usuarios.apellido}')) {return true} else {return false}"></a></td>
+		</tr>
+		<!-- END usuarios.Row -->
+	</table>
+</td></tr></table>
+</FORM>

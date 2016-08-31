@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action=''>
+<input type=HIDDEN name='event' value="">
+
+<table width="100%" height="100%" border="0" cellpadding="2" cellspacing="0" class="contenidos">
+<tr valign="top"><td>
+	<table width="100%" cellpadding="4" cellspacing="1" border="0">
+		<tr align="center">
+			<td colspan="2"><b>Filtros</b></td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>#</b></td>
+			<td class="form"><input type=TEXT name='idcontenido' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Titulo</b></td>
+			<td class="form"><input type=TEXT name='titulo' size=40 maxlength=100 value="" class="ta">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" class="contenidos_light" width="1%" nowrap><b>Tipo de Contenido</b></td>
+			<td class="form">
+				<select name="idcontenido_tipo" class="ta">
+					<option value="">Seleccione un Tipo de Contenido</option>
+					<!-- BEGIN contenidos_tipos.Row -->
+					<option value="{contenidos_tipos.idcontenido_tipo}">{contenidos_tipos.descripcion}</option>
+					<!-- END contenidos_tipos.Row -->
+				</select>
+			</td>
+		</tr>
+		<tr align="right" class="contenidos_light">
+			<td colspan="2">
+			<input type='image' onClick="form.event.value='filter,list'" src="../images/buscar.gif" title="Grabar" width="22" height="22" name="image">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" border="0" cellpadding="4" cellspacing="1">
+		<tr><td colspan="5">
+		<strong>Listando Contenidos</strong>
+		</td></tr>
+		<tr align="center" class="contenidos_light">
+			<td width="1%"> <b><a href="?event=order,list&order_by=idcontenido">C&oacute;digo</a></b></td>
+			<td width="1%" align="center" nowrap><b><a href="?event=order&order_by=idcontenidos_tipo">Tipo
+				de Contenido</a></b></td>
+			<td><b><a href="?event=order&order_by=titulo">T&iacute;tulo</a></b></td>
+			<td width="1%" align="center" nowrap><b><a href="?event=order&order_by=fecha">Fecha</a></b></td>
+			<td width="1%" align="center" nowrap>&nbsp;</td>
+		</tr>
+		<!-- BEGIN contenidos.Row -->
+		<tr class="tabledata" onmouseover="mOvr(this, 'contenidos_light')" onmouseout="mOut(this, 'tabledata')">
+			<td align="right" width="1%"><b>{contenidos.idcontenido}</b></td>
+			<td width="1%" nowrap>{contenidos.tipo.descripcion}</td>
+			<td>{contenidos.titulo}</td>
+			<td width="1%" align="center" nowrap>{contenidos.fecha.nice}</td>
+			<td width="1%" align="center" nowrap>
+				<a href="?event=edit&idcontenido={contenidos.idcontenido}">
+				<img src="../images/editar.gif" border="0" title="Editar" >
+				</a>
+				<a href="?event=delete,list&idcontenido={contenidos.idcontenido}">
+				<img src="../images/borrar_mini.gif" border="0" title="Borrar" onClick="if (confirm('Desea borrar el contenido {contenidos.idcontenido}?')) {return true} else {return false}">
+				</a>
+			</td>
+		</tr>
+		<!-- END contenidos.Row -->
+	</table>
+</td></tr>
+</table>
+</FORM>

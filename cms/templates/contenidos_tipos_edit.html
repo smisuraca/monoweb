@@ -1,0 +1,69 @@
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action='index.php'>
+<INPUT TYPE=HIDDEN NAME='idcontenido_tipo' VALUE="{contenidos_tipos.idcontenido_tipo}">
+<INPUT TYPE=HIDDEN NAME='event' VALUE="">
+  <table width="100%" height="100%" border="0" cellpadding="3" cellspacing="0" class="tipocontenido">
+    <tr valign="top"> 
+    <td>
+        <TABLE width="100%" cellpadding="4" cellspacing="0" border="0">
+          <TR align="right"> 
+            <TD colspan="2"> 
+              <input type='image' onClick="form.event.value='grabar'" src="../images/save.gif" alt="Grabar" width="22" height="22">
+              <input type='image' onClick="if (confirm('Desea borrar este tipo de contenido?')) {form.event.value='borrar'; return true} else {return false}" src="../images/borrar.gif" alt="Borrar" width="22" height="22" name="image">
+              <input type='image' onClick="form.event.value='salir'" src="../images/salir.gif" alt="Salir" width="22" height="22">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align="right" class="tipocontenido_light" width="1%" nowrap> <b>Descripción</b></TD>
+            <TD class="form"> 
+              <INPUT class="ta" TYPE=TEXT NAME='descripcion' SIZE=40 MAXLENGTH=50 VALUE="{contenidos_tipos.descripcion}">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align="right" class="tipocontenido_light" width="1%" nowrap> <b>Extra1 
+              Etiqueta</b></TD>
+            <TD class="form"> 
+              <INPUT class="ta" TYPE=TEXT NAME='extra1_etiqueta' SIZE=40 MAXLENGTH=255 VALUE="{contenidos_tipos.extra1_etiqueta}">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align="right" class="tipocontenido_light" width="1%" nowrap> <b>Extra1 
+              Valores</b></TD>
+            <TD class="form"> 
+              <INPUT class="ta" TYPE=TEXT NAME='extra1_valores' SIZE=40 MAXLENGTH=255 VALUE="{contenidos_tipos.extra1_valores}">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align="right" class="tipocontenido_light" width="1%" nowrap> <b>Extra2 
+              Etiqueta</b></TD>
+            <TD class="form"> 
+              <INPUT class="ta" TYPE=TEXT NAME='extra2_etiqueta' SIZE=40 MAXLENGTH=255 VALUE="{contenidos_tipos.extra2_etiqueta}">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align="right" class="tipocontenido_light" width="1%" nowrap> <b>Extra2 
+              Valores</b></TD>
+            <TD class="form"> 
+              <INPUT class="ta" TYPE=TEXT NAME='extra2_valores' SIZE=40 MAXLENGTH=255 VALUE="{contenidos_tipos.extra2_valores}">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align="right" class="tipocontenido_light" width="1%" nowrap> <b>Extra3 
+              Etiqueta</b></TD>
+            <TD class="form"> 
+              <INPUT class="ta" TYPE=TEXT NAME='extra3_etiqueta' SIZE=40 MAXLENGTH=255 VALUE="{contenidos_tipos.extra3_etiqueta}">
+            </TD>
+          </TR>
+          <TR> 
+            <TD align="right" class="tipocontenido_light" width="1%" nowrap> <b>Extra3 
+              Valores</b></TD>
+            <TD class="form"> 
+              <INPUT class="ta" TYPE=TEXT NAME='extra3_valores' SIZE=40 MAXLENGTH=255 VALUE="{contenidos_tipos.extra3_valores}">
+            </TD>
+          </TR>
+        </TABLE>
+	</td>
+  </tr>
+</table>
+</FORM>

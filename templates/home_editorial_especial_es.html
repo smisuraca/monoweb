@@ -1,0 +1,173 @@
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr valign="top">
+	<td width="50%">
+		<!-- BEGIN {area}::Criticas -->
+		<!-- BEGIN {area}::Criticas.limite -->10<!-- END {area}::Criticas.limite -->
+		<!-- BEGIN {area}::Criticas.paginar -->1<!-- END {area}::Criticas.paginar -->
+
+                <div style="width: 250px">
+
+	        <div style="font-size: 22px">Notas</div>
+                <div class="line"</div>
+	        <div style="font-size: 8px">&nbsp;</div>
+
+        <!-- BEGIN Nota -->
+        <!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+
+        <!-- BEGIN Notas::Fotos -->
+        <!-- BEGIN Link -->
+        <a title="{contenidos.titulo}" href="?tpl=home_nota&idcontenido={contenidos.idcontenido}" idcontenido="{contenidos.idcontenido}">
+        <img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" alt="{contenidos.titulo}" border="0" width="250">
+        </a>
+        <!-- END Link -->
+        <!-- END Notas::Fotos -->
+        <br>
+
+        
+        <!--div id="estrenos_datos" class="caja_gris_notas_datos" style="height:80px"-->
+        <div style="font-size: 14px">{contenidos.fecha}</div>
+        <div style="font-size: 14px"><a title="{contenidos.titulo}" class="link_negro"   href="./index.php?tpl=home_nota&idcontenido={contenidos.idcontenido}"><b>{contenidos.titulo}</b></a></div>
+        <div style="font-size: 12px">{contenidos.volanta}</div>
+        <!--/div-->
+        <br>
+
+        <!-- END Nota -->
+                </div>
+
+
+		<!-- BEGIN PAGINADO -->
+		<center>
+		<table cellpadding="5"><tr><td>
+		<a class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.back}" style="display:{back.show}"><<</a>
+		</td><td>
+			<!-- BEGIN PAGINADO.PAGINA -->
+			<a class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.pag}">{pager.pag_mostrar}</a>
+			<!-- END PAGINADO.PAGINA -->
+			<!-- BEGIN PAGINADO.PAGINA_ACTIVA -->
+			<b>{pager.pag_mostrar}</b>
+			<!-- END PAGINADO.PAGINA_ACTIVA -->
+		<td><a style="display:{next.show}" class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.next}">>></a>
+		</td></tr></table>
+		<!-- END PAGINADO -->
+
+
+		<!-- END {area}::Criticas -->
+
+	
+	</td>
+	<td>
+
+
+
+		<!-- BEGIN {area}::Videoentrevistas -->
+		<!-- BEGIN {area}::Videoentrevistas.paginar -->1<!-- END {area}::Videoentrevistas.paginar -->
+		<!-- BEGIN {area}::Videoentrevistas.limite -->4<!-- END {area}::Videoentrevistas.limite -->
+
+		</div>
+                <div style="width: 250px">
+
+
+	        <div style="font-size: 22px">Videos</div>
+                <div class="line"</div>
+	        <div style="font-size: 8px">&nbsp;</div>
+
+
+        <!-- BEGIN Nota -->
+        <!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+
+        <!-- BEGIN image-jpg -->
+        <!-- BEGIN Link -->
+        <a title="{contenidos.titulo}" href="?tpl=home_videoentrevista&idcontenido={contenidos.idcontenido}" idcontenido="{contenidos.idcontenido}">
+        <img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" alt="{contenidos.titulo}" border="0" width="250">
+        </a>
+        <!-- END Link -->
+        <!-- END image-jpg -->
+        <br>
+
+        
+        <!--div id="estrenos_datos" class="caja_gris_notas_datos" style="height:80px"-->
+        <div style="font-size: 14px">{contenidos.fecha}</div>
+        <div style="font-size: 14px"><a title="{contenidos.titulo}" class="link_negro"   href="./index.php?tpl=home_videoentrevista&idcontenido={contenidos.idcontenido}"><b>{contenidos.titulo}</b></a></div>
+        <div style="font-size: 12px">{contenidos.volanta}</div>
+        <!--/div-->
+        <br>
+
+        <!-- END Nota -->
+
+
+		<!-- BEGIN PAGINADO -->
+		<center>
+		<table cellpadding="5"><tr><td>
+		<a class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.back}" style="display:{back.show}"><<</a>
+		</td><td>
+			<!-- BEGIN PAGINADO.PAGINA -->
+			<a class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.pag}">{pager.pag_mostrar}</a>
+			<!-- END PAGINADO.PAGINA -->
+			<!-- BEGIN PAGINADO.PAGINA_ACTIVA -->
+			<b>{pager.pag_mostrar}</b>
+			<!-- END PAGINADO.PAGINA_ACTIVA -->
+		<td><a style="display:{next.show}" class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.next}">>></a>
+		</td></tr></table>
+		<!-- END PAGINADO -->
+
+		
+		<br>
+		<!-- END {area}::Videoentrevistas -->
+
+		<!-- BEGIN {area}::Notas -->
+		<!-- BEGIN {area}::Notas.paginar -->1<!-- END {area}::Notas.paginar -->
+		<!-- BEGIN {area}::Notas.limite -->5<!-- END {area}::Notas.limite -->
+
+
+                <div style="width: 250px">
+	        <div style="font-size: 22px">Rese&ntilde;as</div>
+                <div class="line"</div>
+	        <div style="font-size: 8px">&nbsp;</div>
+
+
+
+        <!-- BEGIN Nota -->
+        <!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+
+        <!-- BEGIN Notas::Fotos -->
+        <!-- BEGIN Link -->
+        <a title="{contenidos.titulo}" href="?tpl=home_nota&idcontenido={contenidos.idcontenido}" idcontenido="{contenidos.idcontenido}">
+        <img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" alt="{contenidos.titulo}" border="0" width="250">
+        </a>
+        <!-- END Link -->
+        <!-- END Notas::Fotos -->
+        <br>
+
+        
+        <!--div id="estrenos_datos" class="caja_gris_notas_datos" style="height:80px"-->
+        <div style="font-size: 14px">{contenidos.fecha}</div>
+        <div style="font-size: 14px"><a title="{contenidos.titulo}" class="link_negro"   href="./index.php?tpl=home_nota&idcontenido={contenidos.idcontenido}"><b>{contenidos.titulo}</b></a></div>
+        <div style="font-size: 12px">{contenidos.volanta}</div>
+        <!--/div-->
+        <br>
+
+        <!-- END Nota -->
+
+
+
+		<!-- BEGIN PAGINADO -->
+		<center>
+		<table cellpadding="5"><tr><td>
+		<a class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.back}" style="display:{back.show}"><<</a>
+		</td><td>
+			<!-- BEGIN PAGINADO.PAGINA -->
+			<a class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.pag}">{pager.pag_mostrar}</a>
+			<!-- END PAGINADO.PAGINA -->
+			<!-- BEGIN PAGINADO.PAGINA_ACTIVA -->
+			<b>{pager.pag_mostrar}</b>
+			<!-- END PAGINADO.PAGINA_ACTIVA -->
+		<td><a style="display:{next.show}" class="link_negro" href="?tpl=home_editorial_especial&pager{pager.idarea}_from={pager.next}">>></a>
+		</td></tr></table>
+		<!-- END PAGINADO -->
+
+		<!-- END {area}::Notas -->
+	
+	</div>
+
+</td>
+</tr>
+</table>

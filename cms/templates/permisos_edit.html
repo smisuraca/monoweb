@@ -1,0 +1,62 @@
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action=''>
+<INPUT TYPE=HIDDEN NAME='idpermiso' VALUE="{permisos.idpermiso}">
+<input type=HIDDEN name='event' value="">
+  <table width="100%" border="0" cellpadding="2" cellspacing="0" class="permisos">
+    <tr>
+      <td valign="top"> 
+        <table width="100%" cellpadding="4" cellspacing="1" border="0">
+          <tr class="permisos"> 
+            <td align="center" colspan=2><b>Permisos</b></td>
+          </tr>
+          <tr align="right" class="permisos_light"> 
+            <td colspan=2> 
+              <input type='image' onClick="form.event.value='store,edit'" src="../images/save.gif" alt="Grabar" width="22" height="22" name="image">
+              <input type='image' onClick="if (confirm('Desea borrar este permiso?')) {form.event.value='delete,list'; return true} else {return false}" src="../images/borrar.gif" alt="Borrar" width="22" height="22" name="image">
+              <input type='image' onClick="form.event.value='exit'" src="../images/salir.gif" alt="Salir" width="22" height="22" name="image">
+            </td>
+          </tr>
+          <tr> 
+              <td width="1%" align="right" class="permisos_light" nowrap><b>Nombre</b></td>
+              <td class="form"> 
+                <input type=TEXT name='nombre' size=40 maxlength=50 value="{permisos.nombre}" class="ta">
+              </td>
+          </tr>
+          <tr> 
+              <td width="1%" align="right" class="permisos_light" nowrap><b>Descripci&oacute;n</b></td>
+              <td class="form"> 
+                <input type=TEXT name='descripcion' size=40 maxlength=50 value="{permisos.descripcion}" class="ta">
+              </td>
+          </tr>
+	 </table>
+	 <br>
+         <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                <tr align="center" class="permisos_light"> 
+                  <td align="left" class="permisos_light"><b>Grupos</b></td>
+                  <td width="1%" align="center" class="permisos_light"><b><img src="../images/spacer.gif" width="20" height="8"></b></td>
+                </tr>
+                <tr> 
+                  <td class="tabledata"> 
+                    <select name="idgrupo" style="width='100%'">
+					  <option value="">--- Seleccione un Grupo ---</option>
+                      <!-- BEGIN grupos.Row -->
+                      <option value="{grupos.idgrupo}">{grupos.nombre}</option>
+                      <!-- END grupos.Row -->
+                    </select>
+                  </td>
+                  <td width="1%" align="center" class="tabledata"> 
+                    <input type='image' onClick="form.event.value='grupo_store,edit'" src="../images/edit_add.gif" title="Agregar al Grupo">
+                  </td>
+                </tr>
+                <!-- BEGIN permisos.grupos.Row -->
+                <tr class="tabledata" onmouseover="mOvr(this, 'permisos_light')" onmouseout="mOut(this, 'tabledata')"> 
+                  <td>{permisos.grupos.grupo.nombre}</td>
+                  <td width="1%" align="center"><a href="?event=grupo_delete,edit&idpermiso={permisos.idpermiso}&idgrupo_permiso={permisos.grupos.id}" onClick="if (confirm('Desea quitar del grupo \'{permisos.grupos.grupo.nombre}\' este permiso?')) {return true} else {return false}"><img src="../images/edit_remove.gif" border="0" title="Quitar del  Grupo"></a></td>
+                </tr>
+                <!-- END permisos.grupos.Row -->
+         </table>
+    </td>
+  </tr>
+</table>
+</FORM>

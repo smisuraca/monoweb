@@ -1,0 +1,51 @@
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<table width="100%" border="0" cellspacing="0" cellpadding="2" height="100%" class="contenido">
+  <tr valign="top"> 
+    <td>
+      <form name='form' method='post' action='index.php'>
+        <input type=HIDDEN name='idcontenido' value="{contenidos.idcontenido}">
+        <input type=HIDDEN name='order_by' value="{links.order_by}">
+        <input type=HIDDEN name='event' value="">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" class="contenido">
+          <tr> 
+            <td valign="top"> 
+              <table cellpadding="4" cellspacing="0" border="0" width="100%">
+                <tr> 
+                  <td align="right" colspan="2"> 
+                    <input type='image' name='boton' onClick="form.event.value='links_buscar'" src="../images/buscar.gif" width="22" height="22" alt="Buscar">
+                    <input type='image' name='boton' onClick="form.event.value='form'" src="../images/salir.gif" width="22" height="22" alt="Salir">
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="contenido_light" width="1%" nowrap><b>Tipo 
+                    de Link</b></td>
+                  <td class="form"> 
+                    <select name="idlink_tipo">
+                      <option value="">Todos</option>
+                      <!-- BEGIN links_tipos.Row --> 
+                      <option value={links_tipos.idlink_tipo}>{links_tipos.descripcion}</option>
+                      <!-- END links_tipos.Row --> 
+                    </select>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="contenido_light" width="1%" nowrap><b>Título</b></td>
+                  <td class="form"> 
+                    <input type=TEXT name='titulo' size=40 class="ta">
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="contenido_light" width="1%" nowrap><b>Keywords</b></td>
+                  <td class="form"> 
+                    <input type=TEXT name='keywords' size=40 class="ta">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>

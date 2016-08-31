@@ -1,0 +1,398 @@
+<form name="form" method="post" action="../subi/?">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" align="center"><tr valign="top">
+	<td width="100%" align="center">
+		<div class="caja_gris">
+		<div id="estrenos_titulo" class="caja_gris_titulo"><b>Pasos para subir tu corto a Cinevivo</b></div>
+		<div class="caja_gris_separador"></div>
+			<div class="caja_gris_titulo">
+			<div class="caja_gris_sinopsis"><b>Paso 1:</b> El V&iacute;deo debe encontrarse disponible en Youtube o Vimeo. De no poseer el material en alguna fuente similar deber&aacute; realizar esta paso y luego continuar con la inscripci&oacute;n</div>
+			<div class="caja_gris_sinopsis"><b>Paso 2:</b> Completar la Ficha de Inscripci&oacute;n.</div>
+			<div class="caja_gris_sinopsis"><b>Paso 3:</b> Aguardar a que los datos sean verificados.</div>
+			<br>
+			<div class="caja_gris_sinopsis">Por cualquier inconveniente en el registro, por favor contactarse a info@cinevivo.com.ar</div>
+			</div>
+		</div>
+		</div>
+		<br>
+		<div class="caja_gris" style="font-size:12px; background-color:#f7f7f7; color:#000000">
+		<br>
+		<center><div id="response" style="font-align:center; color:#aa0407"></div></center>
+		<div id="ficha">
+		<table border="0" cellpadding="2" cellspacing="0" width="90%" align="center">
+		<tr valign="top">
+			<td colspan="2" align="left"><br><b>Datos del Cortometraje</b><br>&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="2" align="left" nowrap>*Seleccione en que sitio se encuentra su Video</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Url de Video</td>
+			<td width="100%" align="left" style="color:#000000">
+				<input type="text" name="url" id="url" maxlength='200' style="width:95%" value="<Aqui escriba el codigo>">
+				<span style="color:#a7a7a7">
+				Copiar y pegar el codigo de la URL.			
+				Ej: http://www.youtube.com/watch?v=gg1hMt0WGJU</b>
+				</span>
+				
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>&nbsp;</td>
+			<td width="100%" align="left">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*T&iacute;tulo</td>
+			<td width="100%" align="left"><input type="text" name="titulo" id="titulo" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>T&iacute;tulo en ingles</td>
+			<td width="100%" align="left"><input type="text" name="titulo_en" id="titulo_en" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Duraci&oacute;n del Video</td>
+			<td width="100%" align="left"><input type="text" name="duracion" id="duracion" style="width:30px">&nbsp;(en minutos aprox)</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Formato</td>
+			<td width="100%" align="left">
+				<select name="materia" id="material">
+					<option value="0">Cortometraje</option>
+					<option value="1">Largometraje / Trailer</option>
+					<option value="2">Video On Demand</option>
+				</select>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*G&eacute;nero</td>
+			<td width="100%" align="left">
+				<select name="genero" id="genero">
+					<option value="1">Ficci&oacute;n</option>
+					<option value="2">Documental</option>
+					<option value="3">Experimental</option>
+					<option value="4">Animaci&oacute;n</option>
+					<option value="5">Videoclip</option>
+					<option value="6">Videominuto</option>
+					<option value="7">Trailer</option>
+				</select>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Registro</td>
+			<td width="100%" align="left">
+				<select name="formato_realizacion" id="formato_realizacion">
+					<option value="2">MINI-DV</option>
+					<option value="3">DV</option>
+					<option value="4">HDV</option>
+					<option value="9">HD</option>
+					<option value="5">8mm</option>
+					<option value="6">16mm</option>
+					<option value="7">35mm</option>
+					<option value="8">Otro</option>
+				</select>
+			</td>
+		</tr>
+		<!--tr valign="top">
+			<td width="1%" align="right" nowrap>*Formato de proyecci&oacute;n</td>
+			<td width="100%" align="left">
+				<select name="formato_proyeccion" id="formato_proyeccion">
+					<option value="1">DV</option>
+					<option value="2">MINI-DV</option>
+					<option value="3">Otro</option>
+				</select>
+			</td>
+		</tr-->
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Idioma</td>
+			<td width="100%" align="left"><input type="text" name="idioma" id="idioma" maxlength='20'></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Subtitulos en espa&ntilde;ol</td>
+			<td width="100%" align="left"><input type="checkbox" name="subtitulo_es" id="subtitulo_es" value="1"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Subtitulos en ingles</td>
+			<td width="100%" align="left"><input type="checkbox" name="subtitulo_en" id="subtitulo_en" value="1"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*A&ntilde;o de realizaci&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="anno_realizacion" id="anno_realizacion" maxlength='4' style="width:40px"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Lugar de realizaci&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="lugar_realizacion" id="lugar_realizacion" maxlength='50' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Web</td>
+			<td width="100%" align="left"><input type="text" name="web" id="web" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Premios</td>
+			<td width="100%" align="left"><textarea style="width:95%" name="premios" id="premios" cols="100" maxlength='300' rows="15"></textarea></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Sinopsis en espa&ntilde;ol</td>
+			<td width="100%" align="left"><textarea style="width:95%" name="sinopsis_es" id="sinopsis_es" cols="10" maxlength='300' rows="4"></textarea></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Sinopsis en ingles</td>
+			<td width="100%" align="left"><textarea style="width:95%" name="sinopsis_en" id="sinopsis_en" cols="10" maxlength='300' rows="4"></textarea></td>
+		</tr>
+		<tr valign="top">
+			<td colspan="2" align="left"><br><b>Equipo T&eacute;cnico</b><br>(Para los roles con mas de una persona, separar con comas)<br>&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Direcci&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="direccion" id="direccion" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Gui&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="guion" id="guion" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Producci&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="produccion" id="produccion" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Asistente de direcci&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="asistente_direccion" id="asistente_direccion" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Fotograf&iacute;a</td>
+			<td width="100%" align="left"><input type="text" name="fotografia" id="fotografia" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>C&aacute;mara</td>
+			<td width="100%" align="left"><input type="text" name="camara" id="camara" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Arte</td>
+			<td width="100%" align="left"><input type="text" name="arte" id="arte" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Musica</td>
+			<td width="100%" align="left"><input type="text" name="musica" id="musica" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Sonido</td>
+			<td width="100%" align="left"><input type="text" name="sonido" id="sonido" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Edici&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="edicion" id="edicion" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Animaci&oacute;n</td>
+			<td width="100%" align="left"><input type="text" name="animacion" id="animacion" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Productora</td>
+			<td width="100%" align="left"><input type="text" name="productora" id="productora" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Int&eacute;rpretes</td>
+			<td width="100%" align="left"><input type="text" name="interpretes" id="interpretes" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td colspan="2" align="left"><br><b>Datos del Director / Responsable</b><br>(No se publican)<br>&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Nombre</td>
+			<td width="100%" align="left"><input type="text" name="director_nombre" id="director_nombre" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Domicilio</td>
+			<td width="100%" align="left"><input type="text" name="director_domicilio" id="director_domicilio" maxlength='200' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>C&oacute;digo postal</td>
+			<td width="100%" align="left"><input type="text" name="director_codigo_postal" id="director_codigo_postal" maxlength='50' style="width:70px"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Tel&eacute;fono</td>
+			<td width="100%" align="left"><input type="text" name="director_telefono" id="director_telefono" maxlength='50'></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>*Mail</td>
+			<td width="100%" align="left"><input type="text" name="director_mail" id="director_mail" maxlength='100' style="width:95%"></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Nacionalidad</td>
+			<td width="100%" align="left"><input type="text" name="director_nacionalidad" id="director_nacionalidad" maxlength='50'></td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Fecha de nacimiento</td>
+			<td width="100%" align="left"><input type="text" name="director_fecha_nac" id="director_fecha_nac" maxlength='20'>&nbsp;DD-MM-AAAA</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap>Bases y Condiciones</td>
+			<td width="100%" align="left">
+			<div class="scroll">
+
+01. CINEVIVO es un espacio que nace con el objetivo de fomentar la libre difusi&oacute;n y desarrollo del cine independiente.<br>
+02. Las presentes bases y condiciones dir&aacute;n "material audiovisual", "contenido audiovisual", "obra", "pel&iacute;cula" o similar para referir a largometrajes, cortometrajes, videoclips y/o trailers.<br>
+03. Todo el material audiovisual recibido por CINEVIVO estar&aacute; disponible al público para su reproducción a trav&eacute;s de la Web de CINEVIVO, una vez aprobada su publicaci&oacute;n.<br>
+04. Todos los contenidos audiovisuales recibidos estar&aacute;n online desde el momento de su publicaci&oacute;n y permanecer&aacute;n por tiempo indefinido o hasta que el Equipo de CINEVIVO lo disponga.<br>
+05. La convocatoria es abierta y no hay fecha l&iacute;mite para la recepci&oacute;n del material audiovisual, salvo convocatorias excepcionales que ser&aacute;n debidamente anunciadas.<br>
+06. El material enviado a CINEVIVO no ser&aacute; devuelto.<br>
+07. La duraci&oacute;n de los cortometrajes no debe exceder los 60 minutos, pasado ese l&iacute;mite ser&aacute; considerado Largometraje.<br>
+08. Los cortometrajes y largometrajes, para las ocasiones en que estos &uacute;ltimos fueran espec&iacute;ficamente convocados, deben estar hablados y/o subtitulados al Espa&ntilde;ol.<br>
+09. El propietario de la obra cede sin exclusividad a CINEVIVO el derecho a la publicaci&oacute;n online de la misma.
+10. Todas las pel&iacute;culas inscriptas incluir&oacute;n material original. CINEVIVO no se hace responsable de las mismas en lo que a sus contenidos, derechos y/o licencias de explotaci&oacute;n refiere.<br>
+11. CINEVIVO se reserva el derecho de rechazar alguna obra inscripta. Por ejemplo, en los casos que contenga pornograf&iacute;a, sexo expl&iacute;cito y/o una actitud ofensiva.<br>
+12. No hay l&iacute;mites para la cantidad de trabajos por realizador.<br>
+13. CINEVIVO recibe material audiovisual de cualquier tem&aacute;tica.<br>
+14. Los g&eacute;neros aceptables son ficci&oacute;n, documental, experimental, animaci&oacute;n, videoclip, videominuto y trailer.<br>
+15. Por el presente acuerdo, cada realizador reconoce que toda la informaci&oacute;n, im&aacute;genes, textos, fotograf&iacute;as, sonidos, videos, etc., incluidos en el material audiovisual que env&iacute;a es responsabilidad exclusiva de la persona que lo ha creado.<br>
+16. CINEVIVO renuncia a toda responsabilidad con respecto a todo el contenido recibido as&iacute; como tambi&eacute;n a las consecuencias derivadas de la publicaci&oacute;n del mismo. <br>
+17. El realizador conservar&aacute; los derechos de autor y cualquier otro derecho que ya posea del contenido enviado. CINEVIVO, al recibir este contenido, obtendr&aacute; la licencia permanente pero no exclusiva sobre la exhibici&oacute;n de la obra para poder ser publicada en el sitio de internet.<br>
+18. CINEVIVO se compromete a no alterar ni modificar los contenidos audiovisuales enviados para su publicaci&oacute;n.<br>
+			</div>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="1%" align="right" nowrap><input name="acepto" id="acepto" type="checkbox"  class="checkbox"></td>
+			<td width="100%" align="left" nowrap>Acepto bases y condiciones</td>
+		</tr>
+		
+		<tr><td width="100%" colspan="2"><br><br>
+		Letras de la Imagen: <input name="letras" id="letras" style="width:40px" cols="4">&nbsp;<img src="../imagecreate/?&.jpg" border="0" id="letter_img" align="absmiddle"></div>
+		</td></tr>
+		
+		<tr><td width="100%" colspan="2">&nbsp;</td></tr>
+		<tr>
+			<td colspan="2" width="100%" align="center"><input name="enviar" id="enviar" class="enviar pointer" value="Enviar Formulario" type="button"></td>
+		</tr>
+		</table>
+		<br>
+		<div class="caja_gris_sinopsis">(*) Los datos con * son obligatorios.</div>
+		</div>
+		<br>
+		</div>
+
+		<br>
+		<center><span id="wait"></span></center>
+		<br>
+
+	</td>
+</tr>
+</table>
+</form>
+<br>
+<br>
+
+<script>
+	$('url').focus();
+
+	BindById('enviar', 'click', doSubmit);
+	
+	function doSubmit() {
+ 		var url_video;
+
+ 		if ( $('url').value == "<Aqui escriba el codigo>") {
+ 			alert("Debe ingresar la url del video");
+ 			return 0;
+ 		}
+ 			
+ 		if ($('titulo').value.length < 1) {
+ 			alert("Ingrese un Titulo correcto");
+ 			return 0;
+ 		}
+ 		if (!isNumeric($('duracion').value)) {
+ 			alert("Ingrese una Duracion correcta");
+ 			return 0;
+ 		}
+ 		if (!isNumeric($('anno_realizacion').value)) {
+ 			alert("Ingrese una Año de realizacion correcto");
+ 			return 0;
+ 		}
+		if (isEmpty($('sinopsis_es').value)) {
+ 			alert("Ingrese una Sinopsis en Español correcta");
+			return 0;
+ 		}
+ 		if (isEmpty($('director_nombre').value)) {
+ 			alert("Ingrese un Nombre de Director correcto");
+ 			return 0;
+ 		}
+ 		if (($('director_mail').value.search("@") <= 1) || ($('director_mail').value.length < 5)) {
+ 			alert("Ingrese correctamente el Mail");
+ 			return 0;
+ 		}
+ 		if($('acepto').checked != true) {
+ 			alert("Debe aceptar las reglas y condiciones para poder continuar");
+ 			return 0;
+ 		}
+
+    	        var url = '?';
+	        var myDate = new Date();
+
+		var params = {
+			letras: $('letras').value,
+			url: $('url').value,
+			titulo: $('titulo').value,
+			titulo_en: $('titulo_en').value,
+			duracion: $('duracion').value,
+			genero: $('genero').value,
+			material: $('material').value,
+			formato_realizacion: $('formato_realizacion').value,
+			idioma: $('idioma').value,
+			subtitulo_es: ($('subtitulo_es').checked == true) ? 1 : 0,
+			subtitulo_en: ($('subtitulo_en').checked == true) ? 1 : 0,
+			anno_realizacion: $('anno_realizacion').value,
+			lugar_realizacion: $('lugar_realizacion').value,
+			web: $('web').value,
+			premios: $('premios').value,
+			sinopsis_es: $('sinopsis_es').value,
+			sinopsis_en: $('sinopsis_en').value,
+			direccion: $('direccion').value,
+			guion: $('guion').value,
+			produccion: $('produccion').value,
+			asistente_direccion: $('asistente_direccion').value,
+			fotografia: $('fotografia').value,
+			camara: $('camara').value,
+			arte: $('arte').value,
+			musica: $('musica').value,
+			sonido: $('sonido').value,
+			edicion: $('edicion').value,
+			animacion: $('animacion').value,
+			productora: $('productora').value,
+			interpretes: $('interpretes').value,
+			director_nombre: $('director_nombre').value,
+			director_domicilio: $('director_domicilio').value,
+			director_codigo_postal: $('director_codigo_postal').value,
+			director_telefono: $('director_telefono').value,
+			director_mail: $('director_mail').value,
+			director_nacionalidad: $('director_nacionalidad').value,
+			director_fecha_nac: $('director_fecha_nac').value,
+			time: myDate.getTime()
+		};
+	
+		var res = new Ajax.Request( 
+			"../subi/",
+			{
+				method: 'post',
+				parameters: $H(params).toQueryString(),
+				onComplete: doSubmitResponse 
+			}
+		);	
+		$('wait').innerHTML = "<img src='../images/web2/iconos/logo.gif' border='0'>";
+	}
+
+	function doSubmitResponse(e) {
+		if( e.responseText == "duplicado") {
+			$('response').innerHTML = "Ya existe un Cortometraje con ese nombre del mismo director.";
+		} else if ( e.responseText == "error") {
+			$('response').innerHTML = "Error: Revise los datos e intente nuevamente.";
+		} else if ( e.responseText == "invalidletter") {
+			$('response').innerHTML = "Error: Vuela a ingresar las letras de la imagen.";
+			var myDate = new Date();
+			$('letter_img').src="../imagecreate/?&.jpg&time=" + myDate.getTime();
+			
+		} else {
+			$('ficha').innerHTML = "";
+			$('response').innerHTML = "Se ha cargado la ficha correctamente. La publicacion no es automatica.";
+		}
+		$('wait').innerHTML = "";
+		window.scrollTo(0,0);
+	}
+
+</script>

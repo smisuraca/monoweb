@@ -1,0 +1,186 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<!-- calendar stylesheet -->
+<link rel="stylesheet" type="text/css" media="all" href="../css/calendar-win2k-1.css" title="win2k-cold-1" />
+<!-- main calendar program -->
+<script type="text/javascript" src="../js/calendar.js"></script>
+<!-- language for the calendar -->
+<script type="text/javascript" src="../js/lang/calendar-es.js"></script>
+<!-- the following script defines the Calendar.setup helper function, which makes
+	adding a calendar a matter of 1 or 2 lines of code. -->
+<script type="text/javascript" src="../js/calendar-setup.js"></script>
+
+
+<script type="text/javascript" src="../js/prototype.js"></script>
+<script type="text/javascript" src="../js/scriptaculous.js"></script>
+<script type="text/javascript" src="../js/unittest.js"></script>
+<script type="text/javascript" src="../js/player.js"></script>
+<script type="text/javascript" src="../js/controls.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/json.js"></script>
+
+<script type="text/javascript" src="../js/areas.js"></script>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="areas" height="100%">
+  <tr valign="top"> 
+    <td> 
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%" class="areas">
+        <tr> 
+          <form name='form' method='post' action='index.php'>
+
+<input type="hidden" name="contenidos_limit_from"  id="contenidos_limit_from"  value="">
+<input type="hidden" name="contenidos_limit_count" id="contenidos_limit_count" value="">
+<input type="hidden" name="contenidos_order_by" id="contenidos_order_by" value="">
+
+            <input type=HIDDEN name='idarea' id="idarea" value="{areas.idarea}">
+			<input type=HIDDEN name='idweb' value="1">
+            <input type=HIDDEN name='event' value="">
+            <td valign="top"> 
+              <table width="100%" cellpadding="4" cellspacing="0" border="0">
+                <tr align="right"> 
+                  <td colspan="2">
+                    <input type='image' onClick="document.form.event.value='store,list'" src="../images/save.gif" title="Grabar" width="22" height="22" name="image">
+                    <input type='image' onClick="if (confirm('Desea borrar esta area?')) {document.form.event.value='delete,list'; return true} else {return false}" src="../images/borrar.gif" title="Borrar" width="22" height="22" name="image">
+                    <input type='image' onClick="document.form.event.value='exit'" src="../images/salir.gif" title="Salir" width="22" height="22" name="image">
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="areas_light" width="1%" nowrap><b>C&oacute;digo</b></td>
+                  <td class="form" width="100%"><b>{areas.idarea}</b></td>
+                </tr>
+                <tr> 
+                  <td align="right" class="areas_light" width="1%" nowrap><b>Descripci&oacute;n</b></td>
+                  <td class="form" width="100%"> 
+                    <input class="ta" type="TEXT" name="descripcion" size="40" maxlength="150" value="{areas.descripcion}">
+                  </td>
+                </tr>
+              </table>
+              <br>
+		<b>Publicaciones</b>
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tr><td align="center"><div id="listcontenidos_place_pager"></div></td></tr>
+			<tr><td><div id="listcontenidos_place"></div></td></tr>
+			<tr><td><div id="contenidos_status"></div></td></tr>
+		</table>
+		
+            </td>
+          </form>
+        </tr>
+	
+      </table>
+    </td>
+  </tr>
+</table>
+
+<textarea id="listcontenidos" style="display:none">
+<table width="100%" border="0" cellpadding="3" cellspacing="1">
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap><input type="checkbox" id="chequear_todas" name="chequear_todas"></td>
+		<td width="100%">Titulo Contenido</td>
+		<td width="1%" nowrap><a class="order pointer" tipo="fecha_publicacion">Fecha</a></td>
+		<td width="1%" nowrap><a class="order pointer" tipo="destacada">Destacada</a></td>
+		<td width="1%" nowrap><a class="order pointer" tipo="orden">Orden</a></td>
+		<td width="1%" nowrap><img src="../images/nuevo_mini.gif" class="nueva_publicacion pointer"></td>
+	</tr>
+	{for f in contenidos}
+	<tr class="tabledata" onmouseover="mOvr(this, 'contenidos_light')" onmouseout="mOut(this, 'tabledata')" valign="top">
+		<td width="1%" nowrap><input type="checkbox" class="check_contenido" name="comentario_${f.idpublicacion}" id=${f.idpublicacion}></td>
+		<td width="100%">${f.contenido.titulo}</td>
+		<td width="1%" nowrap>${f.fecha_publicacion_nice}</td>
+		<td width="1%" nowrap>${f.destacada}</td>
+		<td width="1%" nowrap>${f.orden}</td>
+		<td width="1%" nowrap><img src="../images/editar_mini.gif" class="editar_publicacion pointer" idpublicacion="${f.idpublicacion}"></td>
+	</tr>
+	{/for}
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap><img src="../images/borrar_mini.gif" class="borrar_contenidos pointer"></td>
+		<td width="100%"></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+	</tr>
+</table>
+</textarea>
+
+<textarea id="editpublicacion" style="display:none">
+<input type="hidden" name="publicacion_idpublicacion" id="publicacion_idpublicacion" value="${publicacion.idpublicacion}">
+<input type="hidden" name='contenido_titulo' id='contenido_titulo' value="" class="ta">
+<input type="hidden" name="publicacion_idcontenido" id="publicacion_idcontenido" value="${publicacion.idcontenido}">
+<table width="100%" border="0" cellpadding="3" cellspacing="1">
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Contenido</td>
+		<td width="100%" align="left">${publicacion.contenido.titulo}</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Fecha</td>
+		<td width="100%"  align="left">
+                    <input type=TEXT id='publicacion_fecha' name='publicacion_fecha' size=19 maxlength=19 value='${publicacion.fecha_publicacion_nice}' class="input_input" readonly>
+                    <a href="javascript:;"><img src="../images/bt_fecha.gif" alt="Hoy" border="0" id="bt_publicacion_fecha" align="absmiddle"></a>
+		</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Destacada</td>
+		<td width="100%" align="left">
+			<select name="publicacion_destacada" id="publicacion_destacada">
+				<option value="NO">NO</option>
+				<option value="SI">SI</option>
+			</select>
+		</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Orden</td>
+		<td width="100%" align="left">
+			<input type=TEXT name='publicacion_orden' id='publicacion_orden' size=6 maxlength=5 value="${publicacion.orden}" class="ta">
+		</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="100%" colspan="2" align="right">
+			<input type="button" value="Grabar" class="grabar_publicacion">
+			<input type="button" value="Cerrar" class="cerrar_publicacion">
+		</td>
+	</tr>
+</table>
+</textarea>
+
+<textarea id="nuevapublicacion" style="display:none">
+<input type="hidden" name="publicacion_idpublicacion" id="publicacion_idpublicacion" value="">
+<input type="hidden" name="publicacion_idcontenido" id="publicacion_idcontenido" value="">
+<table width="100%" border="0" cellpadding="3" cellspacing="1">
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Contenido</td>
+		<td width="100%" align="left">
+			<input type="TEXT" name='contenido_titulo' id='contenido_titulo' value="" class="ta">
+			<div id="contenido_tituloupdate" style="display:none;border:1px solid black;background-color:white;"></div>
+<!-- 			<script language="javascript" charset="utf-8"></script> -->
+		</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Fecha</td>
+		<td width="100%"  align="left">
+                    <input type=TEXT id='publicacion_fecha' name='publicacion_fecha' size=19 maxlength=19 value='' class="input_input" readonly>
+                    <a href="javascript:;"><img src="../images/bt_fecha.gif" alt="Hoy" border="0" id="bt_publicacion_fecha" align="absmiddle"></a>
+		</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Destacada</td>
+		<td width="100%" align="left">
+			<select name="publicacion_destacada" id="publicacion_destacada">
+				<option value="NO">NO</option>
+				<option value="SI">SI</option>
+			</select>
+		</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="1%" nowrap>Orden</td>
+		<td width="100%" align="left">
+			<input type=TEXT name='publicacion_orden' id='publicacion_orden' size=6 maxlength=5 value="0" class="ta">
+		</td>
+	</tr>
+	<tr align="center" class="contenidos_light">
+		<td width="100%" colspan="2" align="right">
+			<input type="button" value="Grabar" class="grabar_publicacion">
+			<input type="button" value="Cerrar" class="cerrar_publicacion">
+		</td>
+	</tr>
+</table>
+</textarea>

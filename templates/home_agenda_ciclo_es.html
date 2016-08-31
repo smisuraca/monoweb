@@ -1,0 +1,36 @@
+<table border="0" cellspacing="0" cellpadding="10" width="100%"><tr valign="top">
+	<td width="100%" valign="top">
+
+			<!-- BEGIN Secciones::Agenda Ciclo -->
+			<!-- BEGIN Secciones::Agenda Ciclo.destacada -->('NO')<!-- END Secciones::Agenda Ciclo.destacada -->
+	
+
+		<!-- BEGIN Nota -->
+		<!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+		<div class="caja_gris_separador"></div>
+		<div id="estrenos_foto" class="caja_gris_foto">
+		<a title="{contenidos.titulo}" href="./index.php?tpl=home_corto&idcontenido={contenidos.idcontenido}"  idcontenido="{contenidos.idcontenido}">
+		<!-- BEGIN image-gif -->
+		<!-- BEGIN Link -->
+		<img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" alt="{contenidos.titulo}" border="0">
+		<!-- END Link -->
+		<!-- END image-gif -->
+		</a>
+		</div>
+		
+		<div id="estrenos_datos" class="caja_gris_datos_cortos_estreno">
+			<!-- BEGIN Agenda::Pais --> <!-- BEGIN Link -->{links.titulo}<!-- END Link --> <!-- END Agenda::Pais -->
+
+			<div class="caja_gris_titulo_corto"><a title="{contenidos.titulo}" class="link_negro"  href="?tpl=home_agenda_detalle&area={area}&idcontenido={contenidos.idcontenido}">{contenidos.titulo}</a></div>
+			<span class="caja_gris_datos_varios fecha_{area}">(desde el {contenidos.fecha} hasta {contenidos.volanta})</span>
+			<span class="caja_gris_datos_varios fin_{area}">(cierre: {contenidos.volanta})</span>
+			<div class="caja_gris_sinopsis">{contenidos.bajada}</div>
+			</div>
+		</div>
+		
+		<!-- END Nota -->
+			<!-- END Secciones::Agenda Ciclo -->
+	</td>
+</tr>
+</table>
+<br><br><br><br>

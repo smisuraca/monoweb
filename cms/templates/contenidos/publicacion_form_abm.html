@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" class="contenido" height="100%">
+  <tr valign="top"> 
+    <td>
+      <form name='form' method='post' action='index.php'>
+        <input type=HIDDEN name='idpublicacion' value="{publicacion.idpublicacion}">
+        <input type=HIDDEN name='idcontenido'   value="{publicacion.idcontenido}">
+        <input type=HIDDEN name='event' value="">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" class="contenido">
+          <tr> 
+            <td valign="top"> 
+              <table cellpadding="4" cellspacing="0" border="0" width="100%">
+                <tr> 
+                  <td align="right" colspan="2"> 
+                    <input type='image' name='boton' onClick="form.event.value='publicar_grabar'" src="../images/save.gif" width="22" height="22" alt="Grabar">
+                    <input type='image' onClick="if (confirm('Desea borrar esta publicacion?')) {form.event.value='publicar_borrar'; return true} else {return false}" src="../images/borrar.gif" alt="Borrar" width="22" height="22" name="image">
+                    <input type='image' name='boton' onClick="form.event.value='form'" src="../images/salir.gif" width="22" height="22" alt="Salir">
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="contenido_light" nowrap width="1%"><b>Area</b></td>
+                  <td class="form"> 
+                    <select name="idarea">
+                      <!-- BEGIN areas.Row --> 
+                      <option value={areas.idarea}>{webs.webcorto}-{areas.descripcion}</option>
+                      <!-- END areas.Row --> 
+                    </select>
+                    <script>setvalue(document.form.idarea, "{publicacion.idarea}")</script>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="contenido_light" nowrap width="1%"><b>Fecha 
+                    de Publicacion</b></td>
+                  <td class="form"> 
+                    <input type=TEXT name='fecha_publicacion' size=11 maxlength=8 value='{publicacion.fecha_publicacion.corta}' class="input_input">
+                    <input type="image" name="hoy" alt="Hoy" onClick="setHoy(document.form.fecha_publicacion); return false" src="../images/fecha.gif" width="16" height="16">
+                    <input type="text" name="hora_publicacion" size=9 maxlength=6 value='{publicacion.fecha_publicacion.hora}' class="input_input">
+                    <input type="image" name="ahora" alt="Ahora" onClick="setHora(document.form.hora_publicacion); return false" src="../images/hora.gif" width="16" height="16">
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="contenido_light" nowrap width="1%"><b>Destacada</b></td>
+                  <td class="form"> 
+                    <select name="destacada">
+                      <option value="SI">SI</option>
+                      <option value="NO">NO</option>
+                    </select>
+                    <script>setvalue(document.form.destacada, "{publicacion.destacada}")</script>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="right" class="contenido_light" nowrap width="1%"><b>Orden</b></td>
+                  <td class="form"> 
+                    <input type=TEXT name='orden' size=10 maxlength=5 value="{publicacion.orden}" class="input_input">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>

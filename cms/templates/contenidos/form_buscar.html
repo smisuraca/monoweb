@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<table width="100%" border="0" cellspacing="0" cellpadding="3" height="100%" class="contenido">
+  <tr valign="top"> 
+    <td>
+      <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" class="contenido">
+        <tr valign="top">
+          <td> 
+            <form name='form' method='get' action='index.php'>
+              <input type=HIDDEN name='event' value="">
+              <table width="100%" cellpadding="4" cellspacing="0" border="0">
+                <tr> 
+                  <td colspan="2" align="right"> 
+                    <input type='image' onClick="form.event.value='buscar'" src="../images/buscar.gif" alt="Buscar" width="22" height="22" name="image">
+                    <input type='image' onClick="form.event.value='salir'" src="../images/salir.gif" alt="Salir" width="22" height="22" name="image">
+                  </td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Código</b></div>
+                  </td>
+                  <td class="form" width="100%"> 
+                    <input type=TEXT name='idcontenido' size=10 value='' class="input_input">
+                  </td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Tipo de Contenido</b></div>
+                  </td>
+                  <td class="form" width="100%"> 
+                    <select name="idcontenido_tipo">
+                      <option value="">Todos</option>
+                      <!-- BEGIN contenidos_tipos.Row --> 
+                      <option value="{contenidos_tipos.idcontenido_tipo}" onChange=" if (idcontenido_tipo.value=1) {window.div1.visibility=hidden;}" >{contenidos_tipos.descripcion}</option>
+                      <!-- END contenidos_tipos.Row --> 
+                    </select>
+                    <script>setvalue(document.form.idcontenido_tipo, "{contenidos.idcontenido_tipo}")</script>
+                  </td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Fecha</b></div>
+                  </td>
+                  <td class="form" width="100%" > 
+                    <input type=TEXT name='fecha' size=11 maxlength=8 class="input_input">
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="javascript:;" onClick="setHoy(document.form.fecha)"><img width="16" height="16" src="../images/fecha.gif" alt="Hoy" border="0"></a></font> 
+                    <input type="text" name="hora" size=9 maxlength=6 class="input_input">
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="javascript:;" onClick="setHora(document.form.hora)"><img width="16" height="16" alt="Ahora" src="../images/hora.gif" border="0"></a></font></td>
+                </tr>
+                <tr> 
+                  <td class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Título</b></div>
+                  </td>
+                  <td class="form" width="100%"> 
+                    <input type=TEXT name='titulo' size=40 value='' class="ta">
+                  </td>
+                </tr>
+                <tr> 
+                  <td valign="top" class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Texto</b></div>
+                  </td>
+                  <td class="form" width="100%"> 
+                    <input type=TEXT name='texto' size=40 value='' class="ta">
+                  </td>
+                </tr>
+                <tr> 
+                  <td valign="top" class="contenido_light" width="1%" nowrap> 
+                    <div align="right"><b>Es Foro?</b></div>
+                  </td>
+                  <td class="form" width="100%"> 
+                    <select name="comentarios">
+                      <option value="">Todos</option>
+                      <option value="NO">NO</option>
+                      <option value="SI">SI Abierto</option>
+                      <option value="MODERADO">SI Moderado</option>
+                    </select>
+                    <script>setvalue(document.form.comentarios, "contenidos.comentarios")</script>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </table>
+
+</td>
+  </tr>
+</table>

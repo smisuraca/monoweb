@@ -1,0 +1,349 @@
+  <script>
+
+    function edittext(form, input, text) {
+        win = window.open("../editorhtml/Compose.php?form="+form+"&input="+input, "edittext", 'menu = no, toolbar = no, status = no, width=470, height=420');
+        return false;
+    }
+
+    function calcular() {
+        document.form.len_titulo.value	= document.form.titulo.value.length;
+//    	document.form.len_volanta.value	= document.form.volanta.value.length;
+    	document.form.len_bajada.value	= document.form.bajada.value.length;
+        document.form.len_texto.value	= document.form.texto.value.length;
+    }
+
+  </script> 
+  
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+
+<form name="form" method="post" action="index.php">
+<input type="hidden" name="idcontenido" value="{contenidos.idcontenido}">
+<input type="hidden" name="extra1" value="{contenidos.extra1}">
+<input type="hidden" name="extra2" value="{contenidos.extra2}">
+<input type="hidden" name="extra3" value="{contenidos.extra3}">
+<input type="hidden" name="extra4" value="{contenidos.extra4}">
+<input type="hidden" name="event" value="">   
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"
+ height="100%" class="contenido">
+  <tbody> 
+  <tr>
+       <td valign="top">        
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+        <tbody> 
+        <tr> 
+          <td> 
+              <table cellpadding="4" cellspacing="0" border="0"
+ width="100%">
+                <tbody> 
+                <tr valign="middle" align="right"> 
+                  <td colspan="3"> 
+                    <input
+ type="image" onclick="form.event.value='grabar'"
+ src="../images/save.gif" title="Grabar" width="22" height="22">
+                    <input type="image"
+ onclick="if (confirm('Desea borrar este contenido?')) {form.event.value='borrar'; return true} else {return false}"
+ src="../images/borrar.gif" title="Borrar" width="22" height="22"
+ name="image">
+                    <input type="image"
+ onclick="form.event.value='salir'" src="../images/salir.gif"
+ title="Salir" width="22" height="22">
+                  </td>
+                </tr>
+                <tr valign="middle"> 
+                  <td align="right" class="contenido_light" width="1%"
+ nowrap><b>C&oacute;digo</b></td>
+                  <td class="form" width="100%"><b>{contenidos.idcontenido}</b></td>
+                  <td class="form" width="1%" nowrap>&nbsp; </td>
+                </tr>
+                  <tr valign="middle">
+                    <td align="right" class="contenido_light" width="1%"
+ nowrap="true"><b>Tipo de Contenido</b></td>
+                    <td class="form"> <font
+ face="Verdana, Arial, Helvetica, sans-serif" size="1">                  
+                       
+                    <select name="idcontenido_tipo">
+		    <!-- BEGIN contenidos_tipos.Row -->
+		    <option value="{contenidos_tipos.idcontenido_tipo}">{contenidos_tipos.descripcion}</option>
+		    <!-- END contenidos_tipos.Row -->
+		    </select>
+                    <script>setvalue(document.form.idcontenido_tipo, "{contenidos.idcontenido_tipo}")</script>
+                     </font></td>
+                    <td class="form" width="1%">&nbsp;</td>
+                  </tr>
+                <tr valign="middle"> 
+                  <td align="right" class="contenido_light" width="1%"
+ nowrap="nowrap"><b>Fecha</b></td>
+                  <td class="form" width="100%"> <font
+ face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+                    <input type="text" name="fecha" size="11" maxlength="8"
+ value="{contenidos.fecha.corta}" class="input_input">
+                    <a
+ href="javascript:;" onclick="setHoy(document.form.fecha)"><img
+ width="16" height="16" src="../images/fecha.gif" title="Hoy" border="0"> </a> 
+                    <input type="text"
+ name="hora" size="9" maxlength="6" value="{contenidos.fecha.hora}" class="input_input">
+                    <a href="javascript:;"
+ onclick="setHora(document.form.hora)"><img width="16" height="16"
+ title="Ahora" src="../images/hora.gif" border="0"> </a> </font></td>
+                  <td class="form" width="1%" nowrap>&nbsp;</td>
+                </tr>
+                <tr valign="middle"> 
+                  <td align="right" class="contenido_light" width="1%"
+ nowrap="nowrap"><b>T&iacute;tulo</b></td>
+                  <td class="form" width="100%"> <font
+ face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+                    <textarea cols="50" name="titulo" onkeyup="calcular();"
+ onblur="calcular();" rows="1" class="ta">{contenidos.titulo}</textarea>
+                    </font></td>
+                  <td class="form" width="1%" nowrap><font
+ face="Verdana, Arial, Helvetica, sans-serif" size="1"> <a href="javascript:;"
+ onclick="edittext('form', 'titulo', form.titulo.value)"
+ onblur="calcular();"><img width="16" height="16"
+ src="../images/editar.gif" title="Editar" border="0"> </a> 
+                    <input type="text"
+ size="5" name="len_titulo" class="input_input">
+                    </font></td>
+                </tr>
+                <!--
+                <TR valign="middle">
+                    <TD align="right"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1">Titulo
+                    Corto</font></b></TD>
+                    <TD class="form"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1">
+                    <input type=text SIZE=40 NAME="titulo_corto" value='{contenidos.titulo_corto}' onKeyup="calcular();" onBlur="calcular();">
+                    <a href="#" onclick="edittext('form', 'titulo_corto', form.titulo_corto.value)" onBlur="calcular();"><img width="16" height="16" src="../images/editar.gif" title="Editar" border="0"></a>
+                    <input type="text" SIZE=5 name="len_corto">
+                    </font></TD>
+                </TR>
+
+                <TR valign="middle">
+                  <TD align="right" class="contenido_light"><b>Volanta</b></TD>
+                  <TD class="form" width="1%"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1">
+                    <textarea cols="50" name="volanta" onKeyUp="calcular();" onBlur="calcular();" rows="1" class="ta">{contenidos.volanta}</textarea>
+                    </font></TD>
+                  <TD class="form"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">
+                    <a href="#" onClick="edittext('form', 'volanta', form.volanta.value)" onBlur="calcular();"><img width="16" height="16" src="../images/editar.gif" title="Editar" border="0"></a>
+                    <input type="text" size=5 name="len_volanta">
+                    </font></TD>
+                </TR>
+
+--> 
+                <TR valign="middle"> 
+                  <TD align="right" class="contenido_light" width="1%" nowrap><b>Bajada</b></TD>
+                  <TD class="form" width="100%"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+                    <textarea cols="50" name="bajada" onKeyUp="calcular();" onBlur="calcular();" class="ta" rows="3">{contenidos.bajada}</textarea>
+                    </font></TD>
+                  <TD class="form" width="1%" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+                    <a href="#" onClick="edittext('form', 'bajada', form.bajada.value)" onBlur="calcular();"><img width="16" height="16" src="../images/editar.gif" title="Editar" border="0"></a> 
+                    <input type="text" size=5 name="len_bajada" class="input_input">
+                    </font></TD>
+                </TR>
+                <tr valign="middle"> 
+                  <td align="right" class="contenido_light" width="1%"
+ nowrap="nowrap"> <b>Texto</b>
+                    </td>
+                  <td class="form" width="100%"> 
+                    <textarea
+ cols="80" name="texto" onkeyup="calcular();" onblur="calcular();"
+ class="ta" rows="15">{contenidos.texto}</textarea>
+                  </td>
+                  <td class="form" width="1%" nowrap><font
+ face="Verdana, Arial, Helvetica, sans-serif" size="1"> <a href="javascript:;"
+ onclick="edittext('form', 'texto', form.texto.value)"
+ onblur="calcular();"><img width="16" height="16"
+ src="../images/editar.gif" title="Editar" border="0"> </a> 
+                    <input type="text"
+ size="5" name="len_texto" class="input_input">
+                    </font></td>
+                </tr>
+                <TR valign="middle"> 
+                  <TD align="right" class="contenido_light" width="1%" nowrap><b>Es Foro?</b></TD>
+                  <TD class="form" width="100%"> 
+                    <select name="comentarios">
+                      <option value="NO">NO</option>
+                      <option value="SI">SI Abierto</option>
+                      <option value="MODERADO">SI Moderado</option>
+                    </select>
+                    <script>setvalue(document.form.comentarios, "{contenidos.comentarios}")</script>
+                  </TD>
+                  <TD class="form" width="1%" nowrap>&nbsp;</TD>
+                </TR>
+                <!--
+                <TR valign="middle">
+                  <TD align="right" class="contenido_light"><b>Keywords</b></TD>
+                  <TD class="form"><INPUT TYPE=TEXT NAME='extra1' SIZE=70 MAXLENGTH=255 VALUE='{contenidos.extra1}'></TD>
+                  <TD class="form"><img width="16" height="16" src="../images/editar.gif" border="0" onClick="window.open('/templates/contenidos/keywords.html', 'popup', 'toolbar = no, status = no, width=200, height=200')"></a></TD>
+                </TR>
+
+                <TR valign="middle">
+                  <TD align="right" class="contenido_light"><b>Promedio</b></TD>
+                  <TD class="form"><INPUT TYPE=TEXT NAME='extra2' SIZE=50 MAXLENGTH=255 VALUE='{contenidos.extra2}'></TD>
+                  <TD class="form"></TD>
+                </TR>
+
+                <TR valign="middle">
+                  <TD align="right" class="contenido_light"><b>Extra 3</b></TD>
+                  <TD class="form"><INPUT TYPE=TEXT NAME='extra3' SIZE=50 MAXLENGTH=255 VALUE='{contenidos.extra3}'></TD>
+                  <TD class="form"></TD>
+                </TR>
+--> </tbody> 
+              </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellpadding="3" cellspacing="0">
+              <tr align="left"> 
+                <td colspan="5" class="contenido_light" bgcolor="#FFEAEA" nowrap><b>Opciones 
+                  de Encuesta </b></td>
+              </tr>
+              <tr align="center"> 
+                <td width="1%" class="tabledata" bgcolor="#FFEAEA" nowrap><b>C&oacute;digo</b></td>
+                <td class="tabledata" bgcolor="#FFEAEA" width="100%"><b>Descripci&oacute;n</b></td>
+                <td width="1%" align="center" class="tabledata" bgcolor="#FFEAEA" nowrap><b>Correcta</b></td>
+                <td align="right" class="tabledata" bgcolor="#FFEAEA" width="1%" nowrap>&nbsp;</td>
+                <td width="1%" align="center" class="tabledata" bgcolor="#FFEAEA" nowrap>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="1%" align="right" class="tabledata" nowrap> 
+                  <input type=HIDDEN name='idopcion' value="{opciones.idopcion}">
+                </td>
+                <td class="tabledata" width="100%"> 
+                  <input class="ta" type=TEXT name='opcion_descripcion' size=40 maxlength=50 value="{opciones.descripcion}">
+                </td>
+                <td width="1%" align="center" class="tabledata" nowrap> 
+                  <select name="opcion_correcta">
+                    <option value="S">S</option>
+                    <option value="N">N</option>
+                  </select>
+                  <script>setvalue(document.form.opcion_correcta, "{opciones.opcion_correcta}")</script>
+                </td>
+                <td align="right" class="tabledata" width="1%" nowrap>&nbsp;</td>
+                <td width="1%" align="left" bgcolor="#FFFFFF" nowrap> 
+                  <input type='image' onClick="form.event.value='grabar_opcion'" src="../images/save_mini.gif" alt="Grabar" width="16" height="16" name="image2">
+                </td>
+              </tr>
+              <!-- BEGIN votos.Row --> 
+              <tr class="tabledata" onMouseOver="mOvr(this, 'contenido_light')" onMouseOut="mOut(this, 'tabledata')" onClick="mClk('index.php?event=form&idopcion={opciones.idopcion}&idcontenido={contenidos.idcontenido}')"> 
+                <td width="1%" align="right" nowrap>{opciones.idopcion} </td>
+                <td width="100%"> {opciones.descripcion} </td>
+                <td width="1%" align="center" nowrap>{opciones.opcion_correcta}</td>
+                <td align="right" width="1%" nowrap>{votos.votos}/{votos.total_votos} 
+                  ({votos.porcentaje}%) </td>
+                <td width="1%" align="left" nowrap> <a href="index.php?event=form&idopcion={opciones.idopcion}&idcontenido={contenidos.idcontenido}"><img src="../images/editar_mini.gif" width="16" height="16" border="0" alt="Editar" vspace="0" hspace="0"></a><a href="index.php?event=borrar_opcion&idopcion={opciones.idopcion}&idcontenido={contenidos.idcontenido}" onClick="if (confirm('Desea borrar la opci� {opciones.descripcion}')) {return true} else {return false}"><img src="../images/borrar_mini.gif" width="16" height="16" border="0" alt="Borrar" vspace="0" hspace="0"></a> 
+                </td>
+              </tr>
+              <!-- END votos.Row --> 
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellpadding="4"
+ cellspacing="0">
+              <tbody> 
+              <tr align="center" class="contenido_light"> 
+                <td width="1%"><img src="../images/mmedia.gif"
+ title="Multimedias/Contenidos Asociados" border="0"> </td>
+                <td align="left" valign="middle"> <b>Contenidos/Multimedios Asociados</b> 
+                </td>
+                <td valign="middle"> <b>T&iacute;tulo</b> </td>
+                <td width="1%" valign="middle"> <b>Url</b> </td>
+                <td align="center" width="1%" valign="middle"> <b>Orden</b> </td>
+                <td width="1%" valign="middle" align="center" nowrap> 
+                  <table width="75%" border="0" cellpadding="0"
+ cellspacing="0">
+                    <tbody> 
+                    <tr> 
+                      <td><a
+ href="index.php?event=links_form&idcontenido={contenidos.idcontenido}"><img
+ src="../images/nuevo_mini.gif" width="16" height="16" border="0"> </a></td>
+                      <td><a
+ href="index.php?event=links_form_buscar&idcontenido={contenidos.idcontenido}"><img
+ src="../images/buscar_mmedia.gif" width="16" height="16" border="0"> </a></td>
+                      <td><a
+ href="index.php?event=contenidos_buscar_form&idcontenido={contenidos.idcontenido}"><img
+ src="../images/buscar_contenido.gif" width="16" height="16" border="0"></a></td>
+                    </tr>
+                    </tbody> 
+                  </table>
+                </td>
+                <!-- BEGIN contenidos_links.Row --> </tr>
+              <tr class="tabledata"
+ onmouseover="mOvr(this, 'contenido_light')"
+ onmouseout="mOut(this, 'tabledata')"
+ onclick="mClk('index.php?event=links_form&idlink={links.idlink}&idcontenido={contenidos.idcontenido}')"> 
+                <td width="1%"> <b>{links.idlink}</b> </td>
+                <td>{links_tipos.descripcion}</td>
+                <td>{links.titulo}</td>
+                <td width="1%">{links.url}</td>
+                <td align="center" width="1%">{links.orden}</td>
+                <td width="1%" align="center" nowrap><a
+ href="index.php?event=links_form&idlink={links.idlink}&idcontenido={contenidos.idcontenido}"><b><img
+ src="../images/editar_mini.gif" width="16" height="16" border="0"> </b></a><a
+ href="index.php?event=links_borrar&idlink={links.idlink}&idcontenido={contenidos.idcontenido}"><b><img
+ src="../images/borrar_mini.gif" width="16" height="16" border="0"
+ onclick="if (confirm('Desea borrar la multimedia {links.idlink}?')) {form.event.value='borrar'; return true} else {return false}"> 
+                  </b></a></td>
+              </tr>
+              <!-- END contenidos_links.Row --> </tbody> 
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellpadding="4"
+ cellspacing="0">
+              <tbody> 
+              <tr align="center" class="contenido_light"> 
+                <td width="1%"><img src="../images/publicar.gif"
+ title="Publicacion" border="0"> </td>
+                <td align="left" valign="middle"><b>Areas de Publicacion</b></td>
+                <td width="1%"><b>Fecha</b></td>
+                <td width="1%"><b>Destacada</b></td>
+                <td width="1%"><b>Orden</b></td>
+                <td width="1%" nowrap> <a
+ href="index.php?event=publicar_form&idcontenido={contenidos.idcontenido}"><img
+ src="../images/nuevo_mini.gif" width="16" height="16" border="0"
+ title="Nuevo"> </a> </td>
+              </tr>
+              <!-- BEGIN publicacion.Row --> 
+              <tr
+ class="tabledata" onmouseover="mOvr(this, 'contenido_light')"
+ onmouseout="mOut(this, 'tabledata')"
+ onclick="mClk('index.php?event=publicar_form&idpublicacion={publicacion.idpublicacion}&idcontenido={contenidos.idcontenido}')"> 
+                <td width="1%"><b>{publicacion.idpublicacion}</b></td>
+                <td>{webs.webcorto}-{areas.descripcion}</td>
+                <td width="1%">{publicacion.fecha_publicacion}</td>
+                <td align="center" width="1%">{publicacion.destacada}</td>
+                <td width="1%" align="center">{publicacion.orden}</td>
+                <td width="1%" align="center" nowrap> 
+                  <table width="75%" border="0" cellpadding="0"
+ cellspacing="0">
+                    <tbody> 
+                    <tr> 
+                      <td><a
+ href="index.php?event=publicar_form&idpublicacion={publicacion.idpublicacion}&idcontenido={contenidos.idcontenido}"><b><img
+ src="../images/editar.gif" width="16" height="16" border="0"> </b></a></td>
+                      <td><a
+ href="index.php?event=publicar_borrar&idpublicacion={publicacion.idpublicacion}&idcontenido={contenidos.idcontenido}"
+ onclick="if (confirm('Desea despublicar el contenido del �ea {areas.descripcion}?')) {return true} else {return false}"><b><img
+ src="../images/borrar_mini.gif" width="16" height="16" border="0"></b></a></td>
+                    </tr>
+                    </tbody> 
+                  </table>
+                </td>
+              </tr>
+              <!-- END publicacion.Row --> </tbody> 
+            </table>
+          </td>
+        </tr>
+        </tbody> 
+      </table>
+  </td>
+     </tr>
+   
+  </tbody> 
+</table>
+<script>calcular();</script>
+</form>

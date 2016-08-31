@@ -1,0 +1,46 @@
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr valign="top">
+	<td width="1%">
+
+		<!-- BEGIN Agenda -->
+		<!-- BEGIN contenidos.fecha.format -->%d-%m-%Y<!-- END contenidos.fecha.format -->
+		<div class="caja_gris_separador"></div>
+
+		<!-- BEGIN image-gif -->
+		<!-- BEGIN Link -->
+		<a class="caja_gris_foto" title="{contenidos.titulo}" href="?tpl=home_agenda_detalle&area={area}&idcontenido={contenidos.idcontenido}"  idcontenido="{contenidos.idcontenido}">
+		<img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" alt="{contenidos.titulo}" border="0">
+		</a>
+		<!-- END Link -->
+		<!-- END image-gif -->
+
+		<div id="estrenos_datos" class="caja_gris_datos_cortos_estreno" style="width:500px">
+			<!-- BEGIN Agenda::Pais --> <!-- BEGIN Link -->{links.titulo}<!-- END Link --> <!-- END Agenda::Pais -->
+
+			<div class="caja_gris_titulo_corto"><a title="{contenidos.titulo}" class="link_negro"  href="?tpl=home_agenda_detalle&area={area}&idcontenido={contenidos.idcontenido}">{contenidos.titulo}</a></div>
+			<span class="caja_gris_datos_varios fecha_{area}">(desde el {contenidos.fecha} hasta {contenidos.volanta})</span>
+			<span class="caja_gris_datos_varios fin_{area}">(cierre: {contenidos.volanta})</span>
+			<div class="caja_gris_sinopsis">{contenidos.bajada}</div>
+			</div>
+		</div>
+
+		<!-- END Agenda -->
+
+		<!-- BEGIN PAGINADO -->
+		<center>
+		<table cellpadding="5"><tr><td>
+		<a class="link_negro" href="../agenda/?tpl=home_agenda&pageragenda_from={pager.back}" style="display:{back.show}">anterior</a>
+		</td><td>
+			<!-- BEGIN PAGINADO.PAGINA -->
+			<a class="link_negro" href="../agenda/?tpl=home_agenda&pageragenda_from={pager.pag}">{pager.pag_mostrar}</a>
+			<!-- END PAGINADO.PAGINA -->
+			<!-- BEGIN PAGINADO.PAGINA_ACTIVA -->
+			<b>{pager.pag_mostrar}</b>
+			<!-- END PAGINADO.PAGINA_ACTIVA -->
+		<td><a style="display:{next.show}" class="link_negro" href="../agenda/?tpl=home_agenda&pageragenda_from={pager.next}">siguiente</a>
+		</td></tr></table>
+		<!-- END PAGINADO -->
+
+	</td>
+</tr>
+</table>
+<br><br><br><br>

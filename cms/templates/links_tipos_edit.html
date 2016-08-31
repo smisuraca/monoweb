@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<FORM NAME="form" method="GET" action="?">
+<INPUT TYPE="hidden" name="idlink_tipo" value="{links_tipos.idlink_tipo}">
+<INPUT TYPE="hidden" NAME="event" VALUE="">
+
+<table width="100%" border="0" height="100%" cellpadding="3" cellspacing="0" class="links_tipos">
+	<tr>
+	<td valign="top">
+		<TABLE cellpadding="4" cellspacing="0" border="0" width="100%">
+		<TR align="right">
+			<TD colspan="2">
+			<input type='image' onClick="form.event.value='store,list'" src="../images/save.gif">
+			<input type='image' onClick="if (confirm('Desea borrar este tipo de multimedia?')) {form.event.value='delete,list'; return true} else {return false}" src="../images/borrar.gif" alt="Borrar" width="22" height="22" name="image">
+			<input type='image' onClick="form.event.value='exit'" src="../images/salir.gif">
+			</TD>
+		</TR>
+		<TR> 
+			<TD align="right" class="links_tipos_light" width="1%" nowrap><b>Descripción</b></TD>
+			<TD class="form"> 
+			<input class="ta" type=TEXT name='descripcion' size=40 maxlength=50 value="{links_tipos.descripcion}">
+			</TD>
+		</TR>
+		<TR>
+			<TD align="right" class="links_tipos_light" width="1%" nowrap><b>Default
+			path</b></TD>
+			<TD class="form"> 
+			<input class="ta" type=TEXT name='defaultpath' size=40 maxlength=255 value="{links_tipos.defaultpath}">
+			</TD>
+		</TR>
+		<TR> 
+			<TD align="right" class="links_tipos_light" width="1%" nowrap><b>Target</b></TD>
+			<TD class="form"> 
+			<input class="ta" type=TEXT name='target' size=40 maxlength=255 value="{links_tipos.target}">
+			</TD>
+		</TR>
+		<TR> 
+			<td align="right" class="links_tipos_light" width="1%" nowrap><b>Upload 
+			</b></td>
+			<td class="form"> 
+			<input class="ta" type=TEXT name='uploadpath' size=40 maxlength=255 value="{links_tipos.uploadpath}">
+			</td>
+		</tr>
+		</TABLE>
+</td></tr></table>
+</FORM>

@@ -1,0 +1,61 @@
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr valign="top">
+	<td width="100%">
+		<!-- BEGIN Subi tu corto::Ficha -->
+		<table border="0" cellpadding="0" cellspacing="15" width="1%" height="100%">
+		<tr>
+		<!-- BEGIN Nota -->
+		
+			<td width="100%" align="center">
+				<!-- BEGIN word -->
+                                <!-- BEGIN Link -->
+				<a title="{contenidos.titulo}" href="../../getmmedia.php/{links.fname}?idlink={links.idlink}">
+				<!-- BEGIN image-gif -->
+				<!-- BEGIN Link -->
+	    	    		<img src="{links_tipos.defaultpath}{links.idlink}" id="foto_portada" align="absmiddle" border="0" alt="ficha">
+	    			<!-- END Link -->
+				<!-- END image-gif --></a>
+				<br/>
+                                <!-- END Link -->
+                                <!-- END word -->
+			</td>
+			<!-- END Nota -->
+		</tr>
+		</table>
+		<!-- END Subi tu corto::Ficha -->
+
+		<!-- BEGIN Subi tu corto::Bases -->
+		<!-- BEGIN Subi tu corto::Bases.destacada -->('NO')<!-- END Subi tu corto::Bases.destacada -->
+
+			<!-- BEGIN Nota -->
+				<div>{contenidos.titulo}</div>
+			<!-- END Nota -->
+		<!-- END Subi tu corto::Bases -->
+	
+
+		<!-- BEGIN Subi tu corto::CRC -->
+		<!-- BEGIN Subi tu corto::CRC.destacada -->('NO')<!-- END Subi tu corto::CRC.destacada -->
+
+			<!-- BEGIN Nota -->
+		<table border="0" cellpadding="0" cellspacing="8" width="100%" height="100%" onmouseover="mOvr(this, 'corto_over')" onmouseout="mOut(this, 'corto_plain')">
+	
+			<tr><td width="1%" valign="top">
+				<img src="../images/cajas/caja_roja.jpg">
+			</td>
+			<td width="100%">
+				<span class="corto_director">
+					{contenidos.titulo_corto}
+				</span>
+				<div class="corto_titulo"><b>{contenidos.titulo}</b>
+				</div>
+				<div class="corto_titulo">
+					{contenidos.volanta}
+				</div>
+			</td>
+			</td></tr>
+		</table>
+			<!-- END Nota -->
+		<!-- END Subi tu corto::CRC -->
+
+	</td>
+</tr>
+</table>

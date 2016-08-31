@@ -1,0 +1,90 @@
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action='index.php'>
+<INPUT TYPE=HIDDEN NAME='idforo'        VALUE="{foros.idforo}">
+<INPUT TYPE=HIDDEN NAME='idcontenido'   VALUE="{foros.idcontenido}">
+<INPUT TYPE=HIDDEN NAME='idpadre'       VALUE="{foros.idpadre}">
+<input type=HIDDEN NAME='idusuario'     VALUE="{foros.idusuario}">
+<input type=HIDDEN NAME='idusuario_to'  VALUE="{foros.idusuario_to}">
+<input type=HIDDEN NAME='ip'            VALUE="{foros.ip}">
+<input type=HIDDEN NAME='event'         VALUE="">
+  <table width="100%" border="0" cellpadding="3" cellspacing="0" height="100%" class="foros">
+    <tr>
+    <td valign="top"> 
+        <table width="100%" cellpadding="4" cellspacing="0" border="0">
+          <tr align="right"> 
+            <td colspan="2"> 
+              <input type='image' onClick="form.event.value='grabar'" src="../images/save.gif" alt="Grabar" width="22" height="22" name="image">
+              <input type='image' onClick="if (confirm('Desea borrar este foro?')) {form.event.value='borrar'; return true} else {return false}" src="../images/borrar.gif" alt="Borrar" width="22" height="22" name="image">
+              <input type='image' onClick="form.event.value='salir'" src="../images/salir.gif" alt="Salir" width="22" height="22" name="image">
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" class="foros_light" width="1%" nowrap><b>C&oacute;digo</b></td>
+            <td class="form"><b>{foros.idforo}</b></td>
+          </tr>
+          <tr> 
+            <td align="right" class="foros_light" width="1%" nowrap><b>Padre</b></td>
+            <td class="form"> <b>{foros.idpadre}</b></td>
+          </tr>
+          <tr> 
+            <td align="right" class="foros_light" width="1%" nowrap><b>Contenido</b></td>
+            <td class="form"><b>{contenidos.titulo}</b></td>
+          </tr>
+          <tr> 
+            <td align="right" class="foros_light" width="1%" nowrap><b>Asunto</b></td>
+
+            <td class="form"> 
+              <textarea name="asunto" cols="40" rows="1" class="ta">{foros.asunto}</textarea>
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" class="foros_light" width="1%" nowrap><b>Mensaje</b></td>
+            <td class="form"> 
+              <textarea name="mensaje" cols="40" class="ta">{foros.mensaje}</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>Fecha</b></td>
+            <td class="form">
+              <input type=TEXT name='fecha' size=40 maxlength=50 value="{foros.fecha}" class="input_input">
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>Tipo</b></td>
+            <td class="form">
+                <select name="tipo">
+                <option value="PUBLICO">Público</option>
+                <option value="PRIVADO">Privado</option>
+                </select>
+                <script>setvalue(document.form.tipo, "{foros.tipo}")</script>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>Aprobado</b></td>
+            <td class="form">
+                <select name="aprobado">
+                <option value="NO">NO</option>
+                <option value="SI">SI</option>
+                </select>
+                <script>setvalue(document.form.aprobado, "{foros.aprobado}")</script>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>De Usuario</b></td>
+            <td class="form"><b>{foros.idusuario}</b></td>
+          </tr>
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>Para Usuario</b></td>
+            <td class="form"><b>{foros.idusuario_to}</b></td>
+          </tr>
+
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>IP</b></td>
+            <td class="form"><b>{foros.ip}</b></td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+</FORM>

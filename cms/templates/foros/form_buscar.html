@@ -1,0 +1,62 @@
+
+
+<link rel="stylesheet" href="../../css/ccstyles.css" type="text/css">
+<FORM NAME='form' method='post' action='index.php'>
+<INPUT TYPE=HIDDEN NAME='event' VALUE="">
+  <table width="100%" border="0" height="100%" cellpadding="3" cellspacing="0" class="foros">
+    <tr>
+    <td valign="top"> 
+        <table width="100%" cellpadding="4" cellspacing="0" border="0">
+          <tr align="right"> 
+            <td colspan="2"> 
+              <input type='image' onClick="form.event.value='buscar'" src="../images/buscar.gif" alt="Buscar" width="22" height="22" name="image">
+              <input type='image' onClick="form.event.value='salir'" src="../images/salir.gif" alt="Salir" width="22" height="22" name="image">
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" class="foros_light"><b>Foros</b></td>
+            <td class="form"> 
+              <select name="idcontenido">
+                <option value="">Todos</option>
+                <!-- BEGIN contenidos.Row -->
+                <option value={contenidos.idcontenido}>{contenidos.titulo}</option>
+                <!-- END contenidos.Row -->
+              </select>
+            </td>
+          <tr>
+            <td align="right" class="foros_light"><b>Asunto</b></td>
+            <td class="form">
+              <input type=TEXT name='asunto' size=40 maxlength=50 value="" class="input_input">
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="foros_light"><b>Mensaje</b></td>
+            <td class="form">
+              <input type=TEXT name='mensaje' size=40 maxlength=50 value="" class="input_input">
+            </td>
+           </tr>
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>Tipo</b></td>
+            <td class="form">
+                <select name="tipo">
+                <option value="">Todos</option>
+                <option value="PUBLICO">Público</option>
+                <option value="PRIVADO">Privado</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="foros_light" width="1%" nowrap><b>Aprobado</b></td>
+            <td class="form">
+                <select name="aprobado">
+                <option value="">Todos</option>
+                <option value="NO">NO</option>
+                <option value="SI">SI</option>
+                </select>
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+</FORM>

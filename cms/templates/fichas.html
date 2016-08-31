@@ -1,0 +1,407 @@
+<link rel="stylesheet" href="../css/ccstyles.css" type="text/css">
+<link rel="stylesheet" type="text/css" media="all" href="../css/calendar-win2k-1.css" title="win2k-cold-1" />
+<script type="text/javascript" src="../js/calendar.js"></script>
+<script type="text/javascript" src="../js/lang/calendar-es.js"></script>
+<script type="text/javascript" src="../js/calendar-setup.js"></script>
+
+
+<script type="text/javascript" src="../js/prototype.js"></script>
+<script type="text/javascript" src="../js/scriptaculous.js"></script>
+<script type="text/javascript" src="../js/unittest.js"></script>
+<script type="text/javascript" src="../js/player.js"></script>
+<script type="text/javascript" src="../js/controls.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/json.js"></script>
+
+<script type="text/javascript" src="../js/fichas.js"></script>
+
+<input type="hidden" id="fichas_limit_from" value="0">
+<input type="hidden" id="fichas_limit_count" value="20">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="areas" height="100%">
+  <tr valign="top"> 
+    <td> 
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td width="1%" align="right">#</td>
+				<td width="100%" align="left"><input id="filter_id" type="text" class="ta"></td>
+			</tr>
+			<tr>
+				<td width="1%" align="right">Titulo</td>
+				<td width="100%" align="left"><input id="filter_titulo" type="text" class="ta"></td>
+			</tr>
+			<tr>
+				<td width="1%" align="right">Direccion</td>
+				<td width="100%" align="left"><input id="filter_direccion" type="text" class="ta"></td>
+			</tr>
+			<tr>
+				<td width="1%" align="right">Publicacion</td>
+				<td width="100%" align="left">
+                                <select id="filter_publicacion" style="width:70px">
+                                        <option value="">Todos</option>
+                                        <option value="0">NO</option>
+                                        <option value="1">SI</option>
+                                        <option value="2">HOME</option>
+                                        <option value="3">MAIN</option>
+                                </select>
+				</td>
+			</tr>
+			<tr>
+				<td width="1%" align="right">Material</td>
+				<td width="100%" align="left">
+                                <select id="filter_material" style="width:100px">
+                                        <option value="">Todos</option>
+                                        <option value="0">Cortometraje</option>
+                                        <option value="1">Largometraje / Trailer</option>
+                                        <option value="2">VOD</option>
+                                </select>
+				</td>
+			</tr>
+			<tr>
+				<td width="1%" align="right">Genero</td>
+				<td width="100%" align="left">
+                                <select id="filter_genero" style="width:100px">
+                                        <option value="">Todos</option>
+                                        <option value="1">Ficci&oacute;n</option>
+                                        <option value="2">Documental</option>
+                                        <option value="3">Experimental</option>
+                                        <option value="4">Animaci&oacute;n</option>
+                                        <option value="5">Videoclip</option>
+                                        <option value="6">Videominuto</option>
+                                        <option value="7">Trailer</option>
+                                </select>
+				</td>
+			</tr>
+			<tr>
+				<td width="1%" align="right" nowrap>Ordenar Por</td>
+				<td width="100%" align="left">
+                                <select id="filter_order_by" style="width:100px">
+                                        <option value="titulo asc">Titulo -> </option>
+                                        <option value="titulo desc">Titulo <- </option>
+                                        <option value="id asc">Id -> </option>
+                                        <option value="id desc">Id <- </option>
+                                        <option value="direccion asc">Direccion -> </option>
+                                        <option value="direccion desc">Direccion <- </option>
+                                </select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><input id="buscar" type="button" value="Buscar"></td>
+			</tr>
+			<tr><td colspan="2" class="tabledata"><div id="fichas_status"></div></td></tr>
+			<tr><td colspan="2" align="center"><div id="listfichas_place_pager"></div></td></tr>
+			<tr><td colspan="2"><div id="listfichas_place"></div></td></tr>
+		</table>
+    </td>
+  </tr>
+</table>
+
+<textarea id="listfichas" style="display:none">
+<table width="100%" border="0" cellpadding="3" cellspacing="1">
+	<tr align="center" class="fichas_light">
+		<td width="1%" nowrap><input type="checkbox" id="chequear_todas" name="chequear_todas"></td>
+		<td width="1%" nowrap>#</td>
+		<td width="100%">Titulo</td>
+		<td width="1%" nowrap>Genero</td>
+		<td width="1%" nowrap>Material</td>
+		<td width="1%" nowrap><a class="order pointer" tipo="fecha_publicacion">Direccion</a></td>
+		<td width="1%" nowrap><a class="order pointer" tipo="destacada">Mail del Director</a></td>
+		<td width="1%" nowrap><a class="order pointer" tipo="destacada">Publicacion</a></td>
+		<td width="1%" nowrap><img src="../images/nuevo_mini.gif" class="editar_ficha pointer" idficha="0"></td>
+	</tr>
+	{for f in fichas}
+	<tr class="tabledata" onmouseover="mOvr(this, 'fichas_light')" onmouseout="mOut(this, 'tabledata')" valign="top">
+		<td width="1%" nowrap><input type="checkbox" class="check_ficha" name="${f.id}" idficha=${f.id}></td>
+		<td width="1%" nowrap>${f.id}</td>
+		<td width="100%">${f.titulo}</td>
+		<td width="1%" nowrap>${f.genero_nice}</td>
+		<td width="1%" nowrap>${f.material_nice}</td>
+		<td width="1%" nowrap>${f.direccion}</td>
+		<td width="1%" nowrap>${f.director_mail}</td>
+		<td width="1%" nowrap>${f.publicacion_nice}</td>
+		<td width="1%" nowrap><img src="../images/editar_mini.gif" class="editar_ficha pointer" idficha="${f.id}"></td>
+	</tr>
+	{/for}
+	<tr align="center" class="fichas_light">
+		<td width="1%" nowrap><img src="../images/borrar_mini.gif" class="borrar_fichas pointer"></td>
+		<td width="1%" nowrap></td>
+		<td width="100%"></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+		<td width="1%" nowrap></td>
+	</tr>
+</table>
+</textarea>
+
+<textarea id="editficha" style="display:none">
+<form name="form" id="form" method="post">
+<input type="hidden" name="id" id="id" value="${f.id}">
+<input type="hidden" name="id" id="reproducciones" value="${f.reproducciones}">
+<input type="hidden" name="event" id="event" value="grabar_ficha">
+<input type="hidden" id="img_src" value="../getmmedia.php?idlink=${f.image_gif}&date=${f.datecache}&imagen.jpg">
+<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#dadada">
+                <tr valign="top">
+                        <td colspan="2" width="100%" align="right">
+                    	<img src="../images/save_mini.gif" class="grabar pointer" title="grabar">
+                    	<img src="../images/salir_mini.gif" class="salir pointer" title="salir">
+			</td>
+                </tr>
+                <tr valign="top">
+                <td width="1%" align="right" nowrap>
+                </td>
+                <td width="100%" align="left" nowrap>
+                	<a href="../../home/?tpl=home&evento=cortos_edit&id=${f.id}&test=1">Probar link de la ficha</a>
+                </td>
+                </tr>
+                <tr valign="top">
+                <td width="1%" align="right" nowrap>
+                	<input type="button" value="Recargar imagen" class="reload_image pointer" title="reload image">
+		</td>
+                <td>
+                <img src="../getmmedia.php?idlink=${f.image_gif}&date=${f.datecache}&imagen.jpg" align="absmiddle"  border="0" id="img_ficha">
+                </td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap></td>
+                        <td width="100%" align="left"><iframe width="500" height="40" src="?event=show_upload_foto&id=${f.id}" frameborder="0" scrolling="no"></iframe></td>
+                </td>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>#</td>
+                        <td width="100%" align="left">${f.id}</td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*T&iacute;tulo</td>
+                        <td width="100%" align="left"><input type="text" name="titulo" id="titulo" maxlength='200' style="width:100%" value="${f.titulo}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Publicaci&oacute;n</td>
+                        <td width="100%" align="left">
+                                <select name="publicacion" id="publicacion" style="width:200px">
+                                        <option value="0">NO</option>
+                                        <option value="1">SI</option>
+                                        <option value="2">HOME</option>
+                                        <option value="3">MAIN</option>
+                                </select>
+                        </td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>URL del Video</td>
+                        <td width="100%" align="left"><input type="text" name="url" id="url" maxlength='200' style="width:100%" value="${f.url}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>URL de Cinevivo</td>
+                        <td width="100%" align="left"><input type="text" name="url_cinevivo" id="url_cinevivo" maxlength='200' style="width:100%" value="${f.url_cinevivo}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>URL de CineNacional</td>
+                        <td width="100%" align="left"><input type="text" name="url_cinenacional" id="url_cinenacional" maxlength='200' style="width:100%" value="${f.url_cinenacional}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>URL de Grupo Kane</td>
+                        <td width="100%" align="left"><input type="text" name="url_kane" id="url_kane" maxlength='200' style="width:100%" value="${f.url_kane}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Imagen Gif</td>
+                        <td width="100%" align="left"><input type="text" name="image_gif" id="image_gif" maxlength='200' style="width:100%" value="${f.image_gif}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*T&iacute;tulo en ingles</td>
+                        <td width="100%" align="left"><input type="text" name="titulo_en" id="titulo_en" maxlength='200' style="width:100%" value="${f.titulo_en}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Duraci&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="duracion" id="duracion" value="${f.duracion}" style="width:100px">&nbsp;(en minutos)</td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Material</td>
+                        <td width="100%" align="left">
+                                <select name="material" id="material" style="width:100px">
+                                        <option value="0">Cortometraje</option>
+                                        <option value="1">Largometraje / Trailer</option>
+                                        <option value="2">VOD</option>
+                                </select>
+                        </td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*G&eacute;nero</td>
+                        <td width="100%" align="left">
+                                <select name="genero" id="genero" style="width:100px">
+                                        <option value="1">Ficci&oacute;n</option>
+                                        <option value="2">Documental</option>
+                                        <option value="3">Experimental</option>
+                                        <option value="4">Animaci&oacute;n</option>
+                                        <option value="5">Videoclip</option>
+                                        <option value="6">Videominuto</option>
+                                        <option value="7">Trailer</option>
+                                </select>
+                        </td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Formato de realizaci&oacute;n</td>
+                        <td width="100%" align="left">
+                                <select name="formato_realizacion" id="formato_realizacion" style="width:100px">
+                                        <option value="1">VHS</option>
+                                        <option value="2">MINI-DV</option>
+                                        <option value="3">DV</option>
+                                        <option value="9">HD</option>
+                                        <option value="4">HDV</option>
+                                        <option value="5">8mm</option>
+                                        <option value="6">16mm</option>
+                                        <option value="7">35mm</option>
+                                        <option value="8">Otro</option>
+                                </select>
+                        </td>
+                </tr>
+                <!--tr valign="top">
+                        <td width="1%" align="right" nowrap>*Formato de proyecci&oacute;n</td>
+                        <td width="100%" align="left">
+                                <select name="formato_proyeccion" id="formato_proyeccion" style="width:100px">
+                                        <option value="1">DV</option>
+                                        <option value="2">MINI-DV</option>
+                                        <option value="3">Otro</option>
+                                </select>
+                        </td>
+                </tr-->
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Idioma</td>
+                        <td width="100%" align="left"><input type="text" name="idioma" id="idioma" maxlength='20' value="${f.idioma}"></td>
+                </tr>
+
+               <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Subtitulos en espa&ntilde;ol</td>
+                        <td width="100%" align="left">
+                                <select name="subtitulo_es" id="subtitulo_es" style="width:100px">
+                                        <option value="0">NO</option>
+                                        <option value="1">SI</option>
+                                </select>
+			</td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Subtitulos en ingles</td>
+                        <td width="100%" align="left">
+                                <select name="subtitulo_en" id="subtitulo_en" style="width:100px">
+                                        <option value="0">NO</option>
+                                        <option value="1">SI</option>
+                                </select>
+			</td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*A&ntilde;o de realizaci&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="anno_realizacion" id="anno_realizacion" maxlength='4' style="width:40px" value="${f.anno_realizacion}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Lugar de realizaci&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="lugar_realizacion" id="lugar_realizacion" maxlength='50' style="width:100%" value="${f.lugar_realizacion}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Web</td>
+                        <td width="100%" align="left"><input type="text" name="web" id="web" maxlength='50' style="width:100%" value="${f.web}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Premios</td>
+                        <td width="100%" align="left"><input style="width:100%" name="premios" id="premios" cols="10" maxlength='300' rows="4" value="${f.premios}"</td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Sinopsis en espa&ntilde;ol</td>
+                        <td width="100%" align="left"><input style="width:100%" name="sinopsis_es" id="sinopsis_es" cols="10" maxlength='300' rows="4" value="${f.sinopsis_es}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Sinopsis en ingles</td>
+                        <td width="100%" align="left"><input style="width:100%" name="sinopsis_en" id="sinopsis_en" cols="10" maxlength='300' rows="4" value="${f.sinopsis_en}"></td>
+                </tr>
+                <tr valign="top">
+                        <td colspan="2" align="left"><br><b>Equipo T&eacute;cnico</b><br>(Para los roles con mas de una persona, separar con comas)<br>&nbsp;</td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Direcci&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="direccion" id="direccion" maxlength='200' style="width:100%" value="${f.direccion}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Gui&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="guion" id="guion" maxlength='200' style="width:100%" value="${f.guion}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Producci&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="produccion" id="produccion" maxlength='200' style="width:100%" value="${f.produccion}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Asistente de direcci&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="asistente_direccion" id="asistente_direccion" maxlength='200' style="width:100%" value="${f.asistente_direccion}"></td>
+                </tr>
+
+
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Fotograf&iacute;a</td>
+                        <td width="100%" align="left"><input type="text" name="fotografia" id="fotografia" maxlength='200' style="width:100%" value="${f.fotografia}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>C&aacute;mara</td>
+                        <td width="100%" align="left"><input type="text" name="camara" id="camara" maxlength='200' style="width:100%" value="${f.camara}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Arte</td>
+                        <td width="100%" align="left"><input type="text" name="arte" id="arte" maxlength='200' style="width:100%" value="${f.arte}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Musica</td>
+                        <td width="100%" align="left"><input type="text" name="musica" id="musica" maxlength='200' style="width:100%" value="${f.musica}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Sonido</td>
+                        <td width="100%" align="left"><input type="text" name="sonido" id="sonido" maxlength='200' style="width:100%" value="${f.sonido}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Edici&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="edicion" id="edicion" maxlength='200' style="width:100%" value="${f.edicion}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Animaci&oacute;n</td>
+                        <td width="100%" align="left"><input type="text" name="animacion" id="animacion" maxlength='200' style="width:100%" value="${f.animacion}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Productora</td>
+                        <td width="100%" align="left"><input type="text" name="productora" id="productora" maxlength='200' style="width:100%" value="${f.productora}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Int&eacute;rpretes</td>
+                        <td width="100%" align="left"><input type="text" name="interpretes" id="interpretes" maxlength='200' style="width:100%" value="${f.interpretes}"></td>
+                </tr>
+                <tr valign="top">
+                        <td colspan="2" align="left"><br><b>Datos del Director / Responsable</b><br>(No se publican)<br>&nbsp;</td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Nombre</td>
+                        <td width="100%" align="left"><input type="text" name="director_nombre" id="director_nombre" maxlength='200' style="width:100%" value="${f.director_nombre}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Domicilio</td>
+                        <td width="100%" align="left"><input type="text" name="director_domicilio" id="director_domicilio" maxlength='200' style="width:100%" value="${f.director_domicilio}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>C&oacute;digo postal</td>
+                        <td width="100%" align="left"><input type="text" name="director_codigo_postal" id="director_codigo_postal" maxlength='50' style="width:70px" value="${f.director_codigo_postal}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Tel&eacute;fono</td>
+                        <td width="100%" align="left"><input type="text" name="director_telefono" id="director_telefono" maxlength='50' value="${f.director_telefono}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>*Mail</td>
+                        <td width="100%" align="left"><input type="text" name="director_mail" id="director_mail" maxlength='100' style="width:100%" value="${f.director_mail}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Nacionalidad</td>
+                        <td width="100%" align="left"><input type="text" name="director_nacionalidad" id="director_nacionalidad" maxlength='50' value="${f.director_nacionalidad}"></td>
+                </tr>
+                <tr valign="top">
+                        <td width="1%" align="right" nowrap>Fecha de nacimiento</td>
+                        <td width="100%" align="left"><input type="text" name="director_fecha_nac" id="director_fecha_nac" maxlength='20'  value="${f.director_fecha_nac}">&nbsp;DD-MM-AAAA</td>
+                </tr>
+ 
+</table>
+</form>
+</textarea>

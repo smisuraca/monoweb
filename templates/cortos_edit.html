@@ -1,0 +1,153 @@
+<!--div style="font-size:14px"-->
+
+        <link rel="image_src" href="http://www.cinevivo.org/getmmedia.php?idlink={ficha.image_gif}&.jpg" />
+        <meta name="description" content="{ficha.sinopsis_es}" />
+
+	<div id="estrenos_titulo" style="font-size:24px"><b>{ficha.titulo}</b></div>
+	<div id="estrenos_titulo" style="font-size:14px">Dir. {ficha.direccion}</div>
+	<div id="estrenos_titulo" style="font-size:8px">&nbsp;</div>
+
+
+	<!-- BEGIN SHOW.url -->
+	<iframe title="Video" width="600" height="357" src="/parse/?url={ficha.url}" frameborder="0" allowfullscreen></iframe>
+	<!-- END SHOW.url -->
+
+	<!-- BEGIN SHOW.url_cinevivo -->
+	<script type="text/javascript" src="../js/swfobject.js"></script>
+	<object type="application/x-shockwave-flash" data="../swf/player.swf" width="600" height="357">
+		<param name="movie" value="../swf/player.swf" />
+		<param name="allowfullscreen" value="true" />
+		<param name="allowscriptaccess" value="always" />
+		<param name="flashvars" value="file=../flvs/{ficha.url_cinevivo}.flv&autostart=true" />
+		<p><a href="http://get.adobe.com/flashplayer">Get Flash</a> to see this player.</p>
+	</object>
+	<!-- END SHOW.url_cinevivo -->
+	<br>
+	<br>
+		<div style="font-size: 20px; float:right">{ficha.reproducciones} <img src="../images/OJO_48x48.gif" border="0" align="absmiddle" width="30"></div>
+
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=hantartico"></script>
+<!-- AddThis Button END -->
+
+	<!--div class="caja_vacia" style="text-align:left">
+		<div style="float:right">{contenidos.extra1} reproducciones</div>
+
+		<div id="votacion" style="display:block">
+		<a id="votar1" class="pointer votar" voto="1" title="malo"><img id="voto1" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking" class="pointer"></a>
+		<a class="pointer votar" voto="2" title="regular"><img id="voto2" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking" class="pointer"></a>
+		<a class="pointer votar" voto="3" title="bueno"><img id="voto3" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking" class="pointer"></a>
+		<a class="pointer votar" voto="4" title="muy bueno"><img id="voto4" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking" class="pointer"></a>
+		<a class="pointer votar" voto="5" title="excelente"><img id="voto5" src="../images/web2/star_off.gif" border="0" align="absmiddle" alt="ranking" class="pointer"></a>&nbsp;<span class="calidad" id="activar_votar">{contenidos.extra4} pts</span>
+		</div>
+	</div-->
+
+		<br>
+
+		
+		<b>T&iacute;tulo</b>: {ficha.titulo}<br>
+		<b>Duraci&oacute;n</b>: {ficha.duracion}<br>
+		<b>G&eacute;nero</b>: <a class="link_negro" href="?tpl=home&evento=cortos_list&material={ficha.material}&genero={ficha.genero}">{ficha.material_nice}, {ficha.genero_nice}</a><br>
+		<b>Idioma</b>: {ficha.idioma}<br>
+		<!--b>Subt&iacute;tulos en pantalla</b><br-->
+		<b>A&ntilde;o de realizaci&oacute;n</b>: {ficha.anno_realizacion}<br>
+		<b>Lugar de realizaci&oacute;n</b>: {ficha.lugar_realizacion}<br>
+		<br>
+
+	<!--/td>
+	</tr>
+	<tr>
+	<td colspan="2" style="font-size:14px" align="left"-->
+		<br>
+		<b>Sinopsis</b>: {ficha.sinopsis_es}<br>
+		<br>
+		<b>Direcci&oacute;n</b>: {ficha.direccion}<br>
+		<!-- BEGIN SHOW.guion -->
+		<b>Gui&oacute;n</b>: {ficha.guion}<br>
+		<!-- END SHOW.guion -->
+		<!-- BEGIN SHOW.produccion -->
+		<b>Producci&oacute;n</b>: {ficha.produccion}<br>
+		<!-- END SHOW.produccion -->
+		<!-- BEGIN SHOW.asistente_direccion -->
+		<b>Asistente de Direcci&oacute;n</b>: {ficha.asistente_direccion}<br>
+		<!-- END SHOW.asistente_direccion -->
+		<!-- BEGIN SHOW.fotografia -->
+		<b>Fotograf&iacute;a</b>: {ficha.fotografia}<br>
+		<!-- END SHOW.fotografia -->
+		<!-- BEGIN SHOW.camara -->
+		<b>C&aacute;mara</b>: {ficha.camara}<br>
+		<!-- END SHOW.camara -->
+		<!-- BEGIN SHOW.arte -->
+		<b>Arte</b>: {ficha.arte}<br>
+		<!-- END SHOW.arte -->
+		<!-- BEGIN SHOW.musica -->
+		<b>M&uacute;sica</b>: {ficha.musica}<br>
+		<!-- END SHOW.musica -->
+		<!-- BEGIN SHOW.sonido -->
+		<b>Sonido</b>: {ficha.sonido}<br>
+		<!-- END SHOW.sonido -->
+		<!-- BEGIN SHOW.edicion -->
+		<b>Edici&oacute;n</b>: {ficha.edicion}<br>
+		<!-- END SHOW.edicion -->
+		<!-- BEGIN SHOW.animacion -->
+		<b>Animaci&oacute;n</b>: {ficha.animacion}<br>
+		<!-- END SHOW.animacion -->
+		<!-- BEGIN SHOW.productora -->
+		<b>Productora</b>: {ficha.productora}<br>
+		<!-- END SHOW.productora -->
+		<!-- BEGIN SHOW.interpretes -->
+		<b>Int&eacute;rpretes</b>: {ficha.interpretes}<br>
+		<!-- END SHOW.interpretes -->
+		
+		<!-- BEGIN SHOW.web -->
+		<b>Web</b>: <a href="http://{ficha.web}" class="link_negro">{ficha.web}</a><br>
+		<!-- END SHOW.web -->
+		
+		<!-- BEGIN SHOW.premios -->
+		<b>Premios</b>: {ficha.premios}<br>
+		<!-- END SHOW.premios -->
+		
+		<br>		
+		<!-- BEGIN SHOW.url_cinenacional -->
+		<a class="link_negro pointer" href="{ficha.url_cinenacional}" border="0" title="link Ficha en Cinenacional"><img src="../images/cinenacional.gif" border="0"></a><br>
+		<!-- END SHOW.url_cinenacional -->
+		<!-- BEGIN SHOW.url_kane -->
+		<a class="link_negro pointer" href="http://{ficha.url_kane}" border="0" title="link a Nota en Grupo Kane">leer acerca del corto en <b>Grupo Kane</b></a><br>
+		<!-- END SHOW.url_kane -->
+		
+		<br>		
+		
+		<div id="fb-root"></div><script src="http://connect.facebook.net/es_AR/all.js#xfbml=1"></script><fb:comments href="http://www.cinevivo.org/home/?tpl=home&evento=cortos_edit&id={ficha.id}" num_posts="10" width="600"></fb:comments>
+		<br>
+
+		<!--/div-->
+<script>
+	var yaVoto = false;
+
+	Event.observe(window, 'load', loadPage);
+		
+	function actualizarVer() {
+		var myAjax = new Ajax.Request( "../ver/", { method: 'get', parameters: "idcontenido={ficha.id}" });
+	}
+	
+
+	function loadPage() {
+		actualizarVer();
+
+	}
+
+	function none() {
+		return;
+	}
+
+</script>
+<!-- END Nota -->
+
+
